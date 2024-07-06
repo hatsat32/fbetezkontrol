@@ -42,11 +42,13 @@ Tez çalışmasının ikinci aşamasında, popüler Docker imajlarında güvenli
 
 Araştırmamız en etkili Docker imaj tarama aracının mevcut zafiyetlerin ciddi bir bölümünü tespit edemediğini gösterdi. Benzer şekilde güncellenmemiş Docker imajlarının güncellenmiş olanlarına göre yaklaşık iki katı zafiyet içerdiği görüldü.
 
-\textbf{Tez Çalışmasının Katkıları}
+% kontrol 1 de kaldırıldı
+% \textbf{Tez Çalışmasının Katkıları}
 
 Tez kapsamında literatüre yapılan katkılar şunlardır:
 
-\begin{itemize}
+\begin{maddelendir}[label=$\bullet$]
+% \begin{maddelendir}[label=\arabic*.]
     \item Araştırma, yaygın olarak tanınan üç Docker konteyner tarama aracı olan Trivy, Grype ve Snyk üzerinde gerçekleştirilmiş, bu araçlar çalışma kapsamında önerilen ve literatürde geçen metriklerle kıyaslanmıştır.
     \item Bildiğimiz kadarıyla bu tez, Snyk konteyner tarama aracını değerlendiren ilk çalışmadır.
     \item Docker Hub'da bulunan 439 docker konteyner imajı taranarak büyük ölçekli bir docker imaj değerlendirmesi gerçekleştirildi. İmajların zaman içerisindeki zafiyet değişimlerini tespit etmek için 364 docker imajı seçilmiş ve üç zaman diliminde 1092 docker imajı taranmıştır. % >>> 143 + 101 + 120
@@ -56,9 +58,10 @@ Tez kapsamında literatüre yapılan katkılar şunlardır:
     \item Ayrıca CentOS'un en çok güvenlik açığı içeren docker imajı olduğu, alpine ve photon'un ise en güvenli imajlar olduğu gözlemlenmiştir.
     \item CVE-1999{-}0236 gibi 2000 yılından önceki güvenlik açıklarının günümüzde hala keşfedilebildiği gözlemlenmiştir.
     \item Güncellenmiş docker imajlarının saldırı yüzeyini önemli ölçüde azaltabildiği gözlemlenmiştir.
-\end{itemize}
+\end{maddelendir}
 
-\textbf{Tez Çalışmasının Organizasyonu}
+% kontrol 1 de kaldırıldı
+% \textbf{Tez Çalışmasının Organizasyonu}
 
 Tez aşağıdaki şekilde düzenlenmiştir: Bölüm~\ref{ch:literatur}'de bu alanda yapılan benzer çalışmalar tartışıldı, Bölüm~\ref{ch:methodology}'de tezde kullanılan araştırma metodolojisinin nasıl yürütüldüğü anlatıldı, Bölüm~\ref{ch:arastirma1}'de Docker imaj tarama araçlarının etkinliği çeşitli metrikler ile değerlendirildi, Bölüm~\ref{ch:arastirma2}'de popüler Docker imajlarının zaman içerisindeki zafiyet değişimi araştırıldı ve Bölüm~\ref{ch:kapanis}'da tezde elde edilen bulgular kısaca değerlendirilerek çalışma sonlandırılmıştır.
 
@@ -80,12 +83,12 @@ Bu bölümde değinilen çalışmalar konteyner ve imaj güvenliği üzerine yap
 
 Tez kapsamında, Docker imaj tarama araçlarının etkinliği ve Docker imajlarının güvenlik açıkları araştırılmıştır. Güvenlik açıkları ve imaj güvenliği sürekli olarak değişmektedir ve Docker imajlarının güvenlik durumunun zaman içerisinde nasıl değiştiğini değerlendirmek önemlidir. Bunu yapmak için şu iş akışı takip edildi:
 
-\begin{itemize}
+\begin{maddelendir}[label=$\bullet$]
     \item Alt bölüm~\ref{subsec:scanner-tool-selection}'de, bir grup imaj tarama aracı araştırılmış ve seçilmiştir.
     \item Alt bölüm~\ref{subsec:image-selection-strategy}'de Docker Hub'dan üç kategoriden olmak üzere en popüler Docker imajları seçilmiştir.
     \item Alt bölüm~\ref{sec:tarama-islemi}'te seçilen Docker imajlarının nasıl tarandığı ve tarama süreci anlatılmıştır.
     \item Alt bölüm~\ref{sec:DataProcessing}'de tarama sonuçlarının nasıl işlendiği açıklanmıştır.
-\end{itemize}
+\end{maddelendir}
 
 \section{Tarama Aracı Seçim Stratejisi}\label{subsec:scanner-tool-selection}
 
@@ -739,7 +742,7 @@ Tezin ilk aşamasında Docker Hub'da resmi, doğrulanmış ve açık kaynak olar
 
 Tez sonuçları şu şekilde listelenebilir:
 
-\begin{itemize}
+\begin{maddelendir}[label=$\bullet$]
     \item Taramalar sonucunda Trivy'nin en fazla sayıda zafiyet tespit ettiği, Grype'ın ise en fazla sayıda benzersiz zafiyet tespit ediği görülmüştür.
     \item En iyi tarama aracı Docker imajlarındaki önemli sayıda güvenlik açığını tespit edemediği ve diğer araçların daha da az performans gösterdiği gözlemlenmiştir.
     \item Risk tabanlı olarak önerilen VSM ve SVSM metrikleri ile güvenlik açıklarının riskleri ön plana çıkartılmıştır.
@@ -751,7 +754,7 @@ Tez sonuçları şu şekilde listelenebilir:
     \item Desteği kesilmiş CentOS gibi işletim sistemi imajları çok sayıda zafiyet içerebilmektedir. Bu imajlar yerine Alpine ve Photon gibi imajlar tercih edilerek zafiyet sayısı azaltılabilir.
     \item Programlama dillerine ait imajların güncellenmedikleri taktirde 2 veya 3 kat daha fazla zafiyet içerebildiği görülmüştür.
     \item Taramalar sonucunda tespit edilen zafiyetlerin çoğunun güncellemelerin uygulanması ile düzeltilebileceği tespit edilmiştir.
-\end{itemize}
+\end{maddelendir}
 
 Bu tez göstermiştir ki, Docker imajlarının güvenliği büyük ölçüde güncellemeler ve uygun tarama araçlarının kullanılmasıyla artırılabilir. Docker imaj güvenliği bulut tabanlı teknolojilerin ve yazılım geliştirme süreçlerinin önemli bir parçası olmaya devam edecektir. Bu alandaki çalışmaların devam etmesi, imaj güvenliğini daha da ileriye taşıyacak ve daha güvenli yazılımların oluşturulmasına yardımcı olacaktır.
 
