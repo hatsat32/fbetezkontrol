@@ -94,7 +94,7 @@ Tez kapsamında, Docker imaj tarama araçlarının etkinliği ve Docker imajlar�
 
 Docker imajlarını taramak için çok sayıda araç online olarak bulunabilir. Bazıları ücretsiz, açık kaynak kodlu ve Github/Gitlab üzerinden erişilebilirken, diğerleri ticari olarak satılmaktadır. İlk olarak, Github'dan başlanarak diğer sitelerde, bloglarda~\autocite{TechbeaconDockersecurity}~\autocite{5opensourcetools}~\autocite{geekflare11Container} imaj tarama araçları araştırılmıştır. İlk araştırmadan sonra, tarama araçları kullanılabilirlik, popülerlik, güncellik ve fiyatlandırma temelinde değerlendirildi. Mevcut tarama araçları tablo~\ref{tab:scanningtoolstable}'deki gibi listelendi:
 
-\begin{table}
+\begin{table}[!htbp]
     \caption{Docker imajı zafiyet tarama araçları.}\label{tab:scanningtoolstable}
     \centering
     \begin{tabular}{ |c|c|c|c| }
@@ -124,7 +124,7 @@ Docker imajlarını listelemek için Docker Hub API'si kullanılmıştır. İlk 
 
 Toplamda, Docker Hub'da barındırılan ve Tablo~\ref{tab:secilen-imajlar}'de listelenen en çok kullanılan 439 docker imajı seçildi.
 
-\begin{table}
+\begin{table}[!htbp]
     \caption{Tez çalışması için başlangıçta seçilen Docker imajları.}\label{tab:secilen-imajlar}
     \centering
     \begin{tabular}{ |c|c| }
@@ -202,7 +202,7 @@ Güvenlik açığı tarama araçlarını yalnızca tespit sayılarına göre de�
 
 Güvenlik açıklarının önem dereceleri Ortak Güvenlik Açığı Puanlama Sistemine (CVSS) göre kategorize edilmektedir. CVSS, bir güvenlik açığının temel özelliklerini yakalamak ve ciddiyetini yansıtan sayısal bir puan üretmek için bir yol sağlar~\autocite{CVSSMainPage}. Şu anda CVSS'nin 4 versiyonu bulunmaktadır. En son versiyon olan 4.\ versiyon 2023 yılında yayınlanmıştır; ancak mevcut verilerin sınırlı olması nedeniyle bu tez kapsamında kullanılmamıştır. Bunun yerine, CVSS puanlarının sürüm 3 ve sürüm 2'si kullanılmıştır. Her sürüm şiddet ve ciddiyet puanları içerir ve tüm puanlar tablo~\ref{tab:cvss-severity} ve~\autocite{CVSSSpecification}'de belirtildiği gibi nitel derecelendirmelerle eşleştirilebilir.
 
-\begin{table}
+\begin{table}[!htbp]
     \caption{Niteliksel şiddet derecelendirme ölçeği.}\label{tab:cvss-severity}
     \centering
     \begin{tabular}{ |c|c|c| }
@@ -299,7 +299,7 @@ Tarama araçlarının benzersiz ve toplam güvenlik açığı tespit sayıların
 	\caption{Zafiyetlerin tarama aracına ve şiddete göre dağılımı.}\label{fig:fig3}
 \end{figure}
 
-\begin{table}
+\begin{table}[!htbp]
     \caption{Tarayıcı aracına ve önem derecesine göre tespit edilen güvenlik açıkları.}\label{tab:scanner-vuln-severity}
     \centering
     \begin{tabular}{ |l|c|c|c|c| }
@@ -325,7 +325,7 @@ Genel olarak, Trivy en fazla sayıda güvenlik açığı tespit etmiş, onu krit
 
 Bu bölümde, isabet ve ıskalama sonuçlarını hesapladık. İlk olarak, tespit edilen tüm güvenlik açıklarından imaj adı, paket adı, paket sürümü ve CVE ID'sini filtreleyerek eşsiz (unique) güvenlik açıkları tespit ettik. Bu yöntemle toplamda 166.846 benzersiz güvenlik açığı tespit edildi. Daha sonra denklem~\ref{eq:dhr} uygulayarak zafiyet tespit oranları değerlendirildi. Sonuçlar tablo~\ref{tab:hit-and-miss} ve şekil~\ref{fig:hit-and-miss}'de görülebilir.
 
-\begin{table}
+\begin{table}[!htbp]
     \caption{Araçların tespit isabet oranları.}\label{tab:hit-and-miss}
     \centering
     \begin{tabular}{ |c|c|c|c| }
@@ -353,7 +353,7 @@ Tespit İsabet Oranı (DHR) sonuçların değerlendirmesi için önemli bir metr
 
 VSM yöntemi DHR yöntemi ile benzer bir yaklaşımla çalışmaktadır. Bu metriklerin hesaplanabilmesi için birden fazla tarama aracının kullanılması gerekmektedir. Bütün tarama araçlarının bulduğu güvenlik açıkları ortak bir havuza toplanıp araçların Miss ($M$) değerleri bir aracın havuzda olup da bulamadığı güvenlik açığına göre hesaplanmaktadır. Bu çalışmada tarama araçlarını birbirlerinden bağımsız olarak değerlendirmek için  SVSM metriği önerilmiştir. Bu metrik VSM'de olduğu gibi zafiyetlerin risk seviyelerini göz önünde bulundurmaktadır. VSM'den farklı olarak sadece aracın bulduğu güvenlik zafiyetlerini kullanarak bir sayısal değer üretmektedir. VSM ve SVSM metriklerinde bulunan sayısal değerlerin bire yakın olması tarama aracının daha iyi olduğunu göstermektedir. SVSM sonuçları Tablo~\ref{tab:proposed-metric-results} ve Şekil~\ref{fig:proposed-metric-results}'de görülebilir.
 
-\begin{table}
+\begin{table}[!htbp]
     \caption{Bir araç tarafından tespit edilen zafiyet CVSS puanlarının toplamı.}\label{tab:vuln-sum}
     \centering
     \begin{tabular}{ |c|c|c|c| }
@@ -369,7 +369,7 @@ VSM yöntemi DHR yöntemi ile benzer bir yaklaşımla çalışmaktadır. Bu metr
 
 Bir sonraki adımda, bölüm~\ref{subsec:ProposedMetric}'deki denklemi uygulayarak güvenlik açığı puanı metriklerini hesapladık. Sonuçlar tablo~\ref{tab:proposed-metric-results} ve şekil~\ref{fig:proposed-metric-results}'de görülebilir.
 
-\begin{table}
+\begin{table}[!htbp]
     \caption{Önerilen metrik ve DHR ile hesaplanan sonuçlar.}\label{tab:proposed-metric-results}
     \centering
     \begin{tabular}{ |c|c|c|c| }
@@ -433,7 +433,7 @@ Yukarıda bahsedilen nedenler seçim sürecini otomatikleştirmeyi imkansız hal
 
 Tezin bu bölümünde Docker imajlarının zaman içindeki güvenlik açığı değişikliklerine odaklanıldı. Bazı Docker imajları kullanımdan kaldırılmış ve bir yıldan uzun bir süre boyunca herhangi bir güncelleme almamıştır. Sonuç olarak, bu imajlar tüm tarama dönemlerinde aynı sonucu üretmektedir. Bu durum tezin amacımızla çelişmektedir, Bundan dolayı bir sonraki adımda güncellenmemiş imajlar tespit edildi ve listeden kaldırıldı. Bunu yapmak için, imaj ve etiket bilgileri Docker Hub API'sinden sorgulandı. Sorgudan imaj ID'leri ve hash değerleri elde edilmeye çalışıldı ancak sorgu sırasında herhangi bir imaj ID bilgisine rastlanmadı. Bundan dolayı karşılaştırmaya imaj ID'leri yerine hash değerleri ile devam edildi. Her bir imaj etiketinin amd64 imajına ait hash değeri API üzerinden elde edilmiş ve hash değeri üzerinden karşılaştırma yapılmıştır. Amd64'ün seçilmesinin nedeni, en yaygın olarak kullanılan mimarisi olmasıdır ve tüm imajlar tarafından desteklenmesidir. Karşılaştırma sonucunda aynı hash değerine sahip imajlar hariç tutuldu, tablo~\ref{tab:final-selected-images}'de detaylandırıldığı gibi toplamda 364 imaj seçildi ve seçilen imajlar taramaya hazırlandı.
 
-\begin{table}
+\begin{table}[!htbp]
     \caption{Son olarak bu tez için seçilen Docker imajları.}\label{tab:final-selected-images}
     \centering
     \begin{tabular}{ |c|c|c| }
@@ -492,7 +492,7 @@ Bu analizden elde edilen sonuçlar, Docker imajlarıın düzenli olarak güncell
     \caption{Şiddet ve döneme göre sonuçlar}\label{fig:vuln-severity-period-1}
 \end{figure}
 
-\begin{table}
+\begin{table}[!htbp]
     \caption{Tarama aracına ve şiddete göre tespit edilen güvenlik açıkları.}\label{tab:vuln-severity-period-1}
     \centering
     \begin{tabular}{ |c|c|c|c|c| }
@@ -526,7 +526,7 @@ Docker imajlarındaki yüksek sayıdaki güvenlik açıkları önemli zararlara 
 
 Tablo~\ref{tab:most-vuln-images-p1} Dönem-1'e ait en fazla zafiyet sayısına sahip Docker imajları ``circleci/python:3.9.9-buster'', ardından ``apache/superset:2.0.1'' ve sonra ``library/hipache:0.3.1'' olarak gelmektedir. Bunlar Docker Hub'da en çok kullanılan Docker imajlarıdır. Bazı imajların güvenlik açıklarının ``apache/superset'', ``library/haskell'', ``library/perl'' gibi önemli ölçüde azaldığını görebiliriz. İlginçtir ki bazı imajların güvenlik açıkları ``circleci/openjdk'' ve ``library/hipache'' gibi dönemler boyunca artmaktadır. Normal koşullarda daha eski Docker imajları daha fazla güvenlik açığı içermesi gerekir fakat güncel sürümlerde eklenen yeni bağımlılıklar, paketler ve yeni özellikler daha fazla güvenli açığının oluşmasına neden olabilmektedir. Bu durum, yeni Docker imajlarının, eski imajlarda olmayan yeni türde güvenlik zafiyetlerine maruz kalma olasılığını artırmıştır.
 
-\begin{table}
+\begin{table}[!htbp]
     \caption{Dönem-1'deki en zafiyetli docker imajları}\label{tab:most-vuln-images-p1}
     \centering
     \begin{tabular}{ |c|>{\bfseries}c|c|c| }
@@ -549,7 +549,7 @@ Tablo~\ref{tab:most-vuln-images-p1} Dönem-1'e ait en fazla zafiyet sayısına s
 
 Tablo~\ref{tab:most-vuln-images-p2}'de görüldüğü gibi Dönem-2'de ``circleci/python:3.9.9-buster'' hala en zafiyetli Docker imajıdır ve bu imaj önceki dönemden itibaren herhangi bir güvenlik güncellemesi almamıştır. İkinci olarak ``library/hipache:0.3.1'' ve üçüncü olarak ``circleci/openjdk:17-buster'' gelmektedir. Genel olarak çoğu imajın güvenlik açıkları dönemler içinde azalmaktadır.
 
-\begin{table}
+\begin{table}[!htbp]
     \caption{Dönem-2'deki en zafiyetli docker imajları}\label{tab:most-vuln-images-p2}
     \centering
     \begin{tabular}{ |c|c|>{\bfseries}c|c| }
@@ -572,7 +572,7 @@ Tablo~\ref{tab:most-vuln-images-p2}'de görüldüğü gibi Dönem-2'de ``circlec
 
 Tablo~\ref{tab:most-vuln-images-p3}'da görüldüğü gibi Dönem-3 içinde ``atlassian/default-image:latest'' en zafiyetli imajdır, ardından ``circleci/python:latest'' ve üçüncü olarak ``redash/redash:latest'' gelmektedir.
 
-\begin{table}
+\begin{table}[!htbp]
     \caption{Dönem-3'deki en zafiyetli docker imajları}\label{tab:most-vuln-images-p3}
     \centering
     \begin{tabular}{ |c|c|c|>{\bfseries}c| }
@@ -621,7 +621,7 @@ Bu eğilim, güncel yazılım imajlarını korumanın kritik önemini vurgulamak
 
 Tablo~\ref{tab:oldest-cves-count} bölümünde tüm imajlar içerisinde tespit edilen en eski CVE'ler ve bunların tespit sıklıkları listelenmiştir. İlginç bir şekilde, çok eski CVE'ler hala Docker imajlarında bulunabilmektedir.
 
-\begin{table}
+\begin{table}[!htbp]
     \caption{Tespit edilen en eski CVE'ler ve tespit sayıları.}\label{tab:oldest-cves-count}
     \centering
     \begin{tabular}{ |c|c| }
@@ -662,7 +662,7 @@ Tablo~\ref{tab:oldest-cves-count} bölümünde tüm imajlar içerisinde tespit e
     \caption{OS imajlarına ait zafiyet sayıları.}\label{fig:os-images-by-period}
 \end{figure}
 
-\begin{table}
+\begin{table}[!htbp]
     \caption{İşletim sistemi imajlarında periyotlara göre tespit edilen güvenlik açıkları.}\label{tab:os-images-by-period}
     \centering
     \begin{tabular}{ |c|c|c|c|c| }
@@ -697,7 +697,7 @@ Programlama dili imajları birçok imaj tarafından temel imaj olarak kullanıl�
     \caption{Programlama dili imajlarının zafiyet sayısı.}\label{fig:proglang-by-periods}
 \end{figure}
 
-\begin{table}
+\begin{table}[!htbp]
     \caption{Dönemlere göre programlama dili imajlarındaki zafiyetler}\label{tab:proglang-by-periods}
     \centering
     \begin{tabular}{ |c|c|c|c|c| }
