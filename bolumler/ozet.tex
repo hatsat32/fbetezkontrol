@@ -1,0 +1,11 @@
+\ozet{
+Docker 2013 yılında tanıtıldığı tarihten itibaren, bilişim sektöründe oldukça popüler bir standart haline geldi. Bunun en büyük nedeni Docker'ın geleneksal sanallaştırma teknolojilerine göre çeşitli avantajlar sağlaması oldu. Bu avantajlar sayesinde Docker imajları günümüzde bulut teknolojilerinin ve bulut teknolojilerinde kullanılan uygulamaların temelini oluşturmaktadır.
+
+Birçok kullanım alanı ve avantajı olmasına rağmen Docker imajları çeşitli güvenlik riskleri içermektedir. Yamalanmamış Docker imajlarındaki güvenlik açıkları kurumlar için ciddi tehditler oluşturmakta, mali kayıplara ve özel verilerin ifşa edilmesine neden olabilmektedir. Ayrıca, kötü amaçlı konteyner imajları kullanıldığında bu güvenlik riskleri daha da kötüleşebilmektedir.
+
+Docker imajları konteynerli uygulamaların temelini oluşturduğundan, bu imajların içindeki yapısal zafiyetler tüm kurulumu veya uygulamayı saldırıya açık hale getirebilmektedir. Dahası, yazılım geliştirmenin dinamik doğası gereği risk ortamı sürekli değişmektedir. Her gün yeni güvenlik açıkları keşfedilmekte ve bu açıkları yamamak için güvenlik güncellemeleri yayınlanmaktadır. Bu süreç, yeni keşfedilen güvenlik açıkları hakkında bilgi sahibi olmayı ve imajları zafiyetlere karşı efektif araçlar ile taramayı içermektedir.
+
+Tez kapsamında iki önemli çalışma yapıldı. Çalışmaların ilki Docker imajlarının taranmasında kullanılan güvenlik tarama araçlarının efektifliğinin ölçülmesi ve başarılarının kıyaslanmasıdır. Bu çalışmada ölçümler literatürde kullanılan değerlendirme metrikleri yanında tezde önerilen iki yeni metrik kullanılarak yapıldı. İkinci çalışmada ise Docker imajlarının sürümleri arasında zamansal iyileştirmeler araştırıldı. Bu amaçlar doğrultusunda Docker Hub'dan en çok kullanılan 439 docker imajı analiz edildi. Bu imajlar ilk çalışma kapsamında Trivy, Grype ve Snyk araçları ile taranıp değerlendirildi. İkinci çalışma kapsamında ise her bir imaj için en az altı ay arayla üç farklı versiyon seçildi ve aynı araçlar ile toplamda 1092 tarama gerçekleştirdi. Bu çalışmada değişen zaman dilimlerindeki sonuçlar analiz edilerek, Docker imajlarının güvenlik açığı değişimine ilişkin analizler yapıldı.
+}
+
+\anahtarkelimeler{Docker, Güvenlik, Güvenlik Açığı Tespiti, Docker İmajları, Docker Güvenliği, Docker İmaj Tarama, Konteyner Güvenliği.}
