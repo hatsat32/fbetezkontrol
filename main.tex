@@ -251,7 +251,7 @@ Araçların karşılaştırılmasına, tespit edilen güvenlik açıklarının i
 
 Güvenlik açıkları ayrıca imaj türü, imaj adı, paket adı ve paket sürümüne göre etiketlenmiştir. Bu etiketlemenin ardından, her bir araç tarafından bulunan toplam güvenlik açığı sayısı ve tüm araçların toplamı Şekil~\ref{fig:fig1}-b'de gösterilmektedir. Şekil~\ref{fig:fig1}'de verilen grafikler karşılaştırıldığında, Grype tekil güvenlik açığı sayısı bakımından önde gelirken, Trivy imajlarda bulunan toplam güvenlik açığı sayısında önemli ölçüde üstünlük sağlamaktadır. Daha fazla açıklık getirmek gerekirse, Trivy'nin 439 docker imajını taradıktan sonra bulduğu farklı güvenlik açığı sayısı 6779 iken, Trivy'nin tüm imajlarda bulduğu toplam güvenlik açığı sayısı 111865'tir. Benzer bir durum diğer araçlar için de geçerlidir. Grafikler arasında Trivy ve Grype araçları arasındaki sıralama değişse de Snyk her iki grafikte de sürekli olarak son sırada yer almaktadır.
 
-\begin{figure}
+\begin{figure}[!htbp]
 	\centering
 	\begin{subfigure}[]{\linewidth/2}
 		\includegraphics[width=\linewidth]{images/s1/vulCountsUniq.png}
@@ -269,7 +269,7 @@ Güvenlik açıkları ayrıca imaj türü, imaj adı, paket adı ve paket sürü
 
 Tarama araçlarının benzersiz ve toplam güvenlik açığı tespit sayılarının kesişim diyagramları sırasıyla Şekil~\ref{fig:fig2}-a ve Şekil~\ref{fig:fig2}-b'de Venn diyagramlarında gösterilmiştir. Şekil~\ref{fig:fig2}-a'daki Venn diyagramına bakıldığında, tüm araçlar tarafından tespit edilen ortak eşsiz güvenlik açığı sayısının 4171 olduğu görülebilir. Bu sayı toplam tespit edilen güvenlik açığı sayısının (8752) yarısından azdır. Bu, docker imajlarındaki güvenlik açıklarının birden fazla araç tarafından daha iyi kapsanabileceğini göstermektedir. Benzer bir sonuç, Şekil~\ref{fig:fig2}-b'de verilen ve tüm imajlar tarandıktan sonra bulunan güvenlik açıklarını gösteren Venn diyagramı incelenerek de çıkarılabilir.
 
-\begin{figure}
+\begin{figure}[!htbp]
 	\centering
 	\begin{subfigure}[Figure A]{\linewidth/2}
 		\includegraphics[width=1\linewidth]{images/s1/vulCountsVennUniq.png}
@@ -285,7 +285,7 @@ Tarama araçlarının benzersiz ve toplam güvenlik açığı tespit sayıların
 
 Şekil~\ref{fig:vulnerabilities-by-severity} ve tablo~\ref{tab:scanner-vuln-severity}'de güvenlik açığı tespitlerini ciddiyete (severity) göre ayrılmış olarak görebiliriz. Tarama sürecinde, ihmal edilebilir ve bilinmeyen güvenlik açıklarını hariç tutuldu, çünkü ihmal edilebilir güvenlik açıkları ciddi hasara işaret etmez ve bilinmeyen güvenlik açıklarının CVSS puanları yoktur.
 
-\begin{figure}
+\begin{figure}[!htbp]
 	\centering
 	\begin{subfigure}[Figure A]{\linewidth/2}
 		\includegraphics[width=1\linewidth]{images/s1/scanner-vuln-and-severity.png}
@@ -341,7 +341,7 @@ Bu bölümde, isabet ve ıskalama sonuçlarını hesapladık. İlk olarak, tespi
 
 Bu sayılardan ve istatistiklerden, Trivy'nin \%67 isabet oranıyla en iyi performansı gösterdiği sonucunu çıkarabiliriz. Trivy 111.865 adet güvenlik açığı tespit etmiştir, ancak yine de güvenlik açıklarının \%33'ünü kaçırmaktadır; kaçırdığı zafiyetlerin tam sayısı 54.981'dir. Yani en iyi tarama aracı güvenlik açıklarının \%33'ünü kaçırmaktadır. Sonra, Grype 54.099 güvenlik açığı tespit etmiştir ve 112.747 güvenlik açığını kaçırmıştır. Grype'ın DHR'si \%32'dir ve güvenlik açıklarının \%68'ini kaçırmaktadır. Son olarak, Snyk 39.430 güvenlik açığı tespit etmiştir ve \%24 DHR ile 127.418 güvenlik açığını kaçırmıştır. Bu istatistikler şekil~\ref{fig:hit-and-miss}'de görülebilir.
 
-\begin{figure}
+\begin{figure}[!htbp]
     \centering
     \includegraphics[width=1\linewidth]{images/s1/DHR.png}
     \caption{Tarama araçları zafiyet tespiti oranları.}\label{fig:hit-and-miss}
@@ -385,13 +385,13 @@ Bir sonraki adımda, bölüm~\ref{subsec:ProposedMetric}'deki denklemi uygulayar
 
 Bu rakamlar, Trivy'nin \%44 oranla en iyi performansı gösterdiğini, Grype'ın \%22 oranla ikinci sırada yer aldığını ve Snyk'in \%16 oranla üçüncü sırada olduğunu açıkça göstermektedir.
 
-% \begin{figure}
+% \begin{figure}[!htbp]
 %     \centering
 %     \includegraphics[width=1\linewidth]{images/proposed-metric-results.png}
 %     \caption{Önerilen metrik ile hesaplanan sonuçlar}\label{fig:proposed-metric-results}
 % \end{figure}
 
-\begin{figure}
+\begin{figure}[!htbp]
 	\centering
 	\begin{subfigure}[]{\linewidth/2}
 		\includegraphics[width=\linewidth]{images/s1/VSM.png}
@@ -411,7 +411,7 @@ Bu rakamlar, Trivy'nin \%44 oranla en iyi performansı gösterdiğini, Grype'ın
 
 İlk olarak VSR'miz DHR'den daha az oran göstermektedir. Bunun nedeni DHR'nin yalnızca tespit edilen güvenlik açığı sayısına dayanması, ancak bizim metriğimizde ortaya çıkan oranın güvenlik açığının CVSS puanlarına dayanmasıdır. Örneğin tablo~\ref{tab:scanner-vuln-severity}'de Trivy'nin 3879 kritik, 21.904 yüksek, 42.778 orta ve 43.304 düşük şiddette güvenlik açığı tespit ettiği görülebilir. Bu önem dereceleri DHR için önemli değildir, ancak VSR için bu önem derecesi farkı sonuç oranını düşürür çünkü tarama araçları daha az kritik güvenlik açıkları tespit eder. Sonuç grafiğini şekil~\ref{fig:comparison-dhr-vsr}'da görebiliriz.
 
-\begin{figure}
+\begin{figure}[!htbp]
     \centering
     \includegraphics[width=1\linewidth]{images/s1/comparison-dhr-vsr.png}
     \caption{DHR ve VSR'nin Karşılaştırılması}\label{fig:comparison-dhr-vsr}
@@ -466,17 +466,17 @@ Son olarak, analizin kapsamı, işletim sistemleri ve programlama diline özgü 
 İlk adımda, sonuçlar güvenlik açığı tespit sayısına göre değerlendirilmiştir. Dönem-1'de tarama araçları 219.942 güvenlik açığı tespit ederek en yüksek sayıya ulaşmış, bunu 159.166 güvenlik açığı ile Dönem-2 ve 97.753 güvenlik açığı ile Dönem-3 izlemiştir. Sonuçlar şekil~\ref{fig:detected-vulns-by-period}'de gösterilmektedir. Şekilde görüldüğü gibi~\ref{fig:detected-vulns-by-period} güncel olmayan docker imajlarındaki güvenlik açığı sayıları önemli ölçüde artmaktadır. Dönem-2, Dönem-3'e göre \%62,82 daha fazla güvenlik açığı içermekte ve benzer şekilde Dönem-1, Dönem-3'e göre \%125 daha fazla güvenlik açığı içermektedir. Bu rakamlardan, 1 yıl boyunca güncellenmemiş imajların güncellenmiş olanlara kıyasla iki kattan fazla güvenlik açığı içerdiğini söyleyebiliriz.
 % p2/p3 162.82 p1/p3 225.0
 
-\begin{figure}
+\begin{figure}[!htbp]
     \centering
-    \includegraphics[width=1\linewidth]{images/s2/detected-vulns-by-period.png}
+    \includegraphics[width=.8\linewidth]{images/s2/detected-vulns-by-period.png}
     \caption{Tüm dönemlerdeki tarama araçlarına ait tespit edilen zafiyetler.}\label{fig:detected-vulns-by-period}
 \end{figure}
 
 Şekil~\ref{fig:detected-uniq-vulns-by-period} dönemlere göre eşsiz (unique) zafiyet tespitlerini gösterilmektedir. Dönem-1'den Dönem-3'e kadar tüm imajlarda 1138 benzersiz CVE zafiyeti tamamen çözülmüştür.
 
-\begin{figure}
+\begin{figure}[!htbp]
     \centering
-    \includegraphics[width=1\linewidth]{images/s2/detected-uniq-vulns-by-period.png}
+    \includegraphics[width=.8\linewidth]{images/s2/detected-uniq-vulns-by-period.png}
     \caption{Tüm dönemlerde tespit edilen benzersiz güvenlik açıkları}\label{fig:detected-uniq-vulns-by-period}
 \end{figure}
 
@@ -486,7 +486,7 @@ Bu analizden elde edilen sonuçlar, Docker imajlarıın düzenli olarak güncell
 
 Şekil~\ref{fig:vuln-severity-period-1} ve tablo~\ref{tab:vuln-severity-period-1} güvenlik açığı tespitlerini önem derecesine göre ayrılmış olarak görülmektedir. Tarama işlemi sırasında, ihmal edilebilir ve bilinmeyen güvenlik açıkları hariç tutulmuştur, çünkü bu güvenlik açıkları önemli bir riske sahip değildir.
 
-\begin{figure}
+\begin{figure}[!htbp]
     \centering
     \includegraphics[width=1\linewidth]{images/s2/vuln-severity-period-1.png}
     \caption{Şiddet ve döneme göre sonuçlar}\label{fig:vuln-severity-period-1}
@@ -508,7 +508,7 @@ Bu analizden elde edilen sonuçlar, Docker imajlarıın düzenli olarak güncell
 
 Kritik güvenlik açıkları en tehlikeli ve ciddi olanlardır, bu da tespit edilmelerini çok önemli kılar, yüksek ciddiyetli güvenlik açıkları kritik olanlardan daha az ciddi olsa da tespit edilmeleri yine de önemlidir. Şekil~\ref{fig:vuln-severity-period-1} ve tablo~\ref{tab:vuln-severity-period-1}'te, tüm dönemlerde güvenlik açığı sayısı zaman içinde azalmaktadır. Kritik ve yüksek güvenlik açıkları için güncel olmayan imajlar, güncellenmiş olanlara kıyasla iki kat daha fazla güvenlik açığı içermektedir.
 
-\begin{figure}
+\begin{figure}[!htbp]
     \centering
     \includegraphics[width=1\linewidth]{images/s2/severity-over-periods.png}
     \caption{Zafiyet şiddetlerinin dönemler içerisindeki dağılımı}\label{fig:severity-over-periods}
@@ -599,9 +599,9 @@ Tablo~\ref{tab:most-vuln-images-p3}'da görüldüğü gibi Dönem-3 içinde ``at
 
 Şekil~\ref{fig:image-type-by-periods}'de imaj kategorileri ve tespit edilen güvenlik açıkları görülmektedir. Güncellenmemiş docker imajları güncellenmiş olanlara kıyasla iki kat daha fazla güvenlik açığı içermektedir.
 
-\begin{figure}
+\begin{figure}[!htbp]
     \centering
-    \includegraphics[width=1\linewidth]{images/s2/image-type-by-periods.png}
+    \includegraphics[width=.8\linewidth]{images/s2/image-type-by-periods.png}
     \caption{Dönemlere göre imaj türü güvenlik açıkları}\label{fig:image-type-by-periods}
 \end{figure}
 
@@ -609,7 +609,7 @@ Güncel olmayan yazılım imajlarının, güncel olanlara kıyasla önemli ölç
 
 Şekil~\ref{fig:image-type-severity}'da gösterildiği gibi, veriler açık bir eğilimi doğrulamaktadır: güncel olmayan yazılım imajları, güncellenmiş benzerlerine kıyasla sürekli olarak daha fazla sayıda güvenlik açığı taşımaktadır. Bu güvenlik açığı farkı, çeşitli imaj türlerinde ve tüm güvenlik açığı şiddetlerinde belirgindir.
 
-\begin{figure}
+\begin{figure}[!htbp]
     \centering
     \includegraphics[width=1\linewidth]{images/s2/image-type-severity.png}
     \caption{Zafiyetlerin imaj kategorilerine ve şiddete göre dağılımı.}\label{fig:image-type-severity}
@@ -656,7 +656,7 @@ Tablo~\ref{tab:oldest-cves-count} bölümünde tüm imajlar içerisinde tespit e
 
 İşletim Sistemi (OS) imajları, Docker imajlarının büyük çoğunluğu için temel oluşturmaktadır. Python, OpenJDK ve Ruby gibi popüler imajlar, temel olarak OS imajlarından yararlanır. Bu katmanlı yaklaşım, birçok geliştiricinin uygulamaları için temel imajlar üzerine inşa etmesiyle daha da genişlemektedir. Sonuç olarak, bir işletim sistemi imajında bulunan herhangi bir güvenlik açığı, onu miras alan sonraki tüm imajlara yayılabilir. Bu miras zinciri, temel olarak kullanılan işletim sistemi imajlarını korumanın kritik öneminin altını çizmektedir. Zafiyetli bir temel (base) işletim sistemi imajının etkisi geniş ve kapsamlı olabilir. Yaygın olarak kullanılan bir Debian imajında bulunabilecek kritik bir güvenlik açığının bulunduğu bir senaryo düşünün. Bu güvenlik açığı Debian imajının kendisiyle sınırlı kalmayacaktır; aynı zamanda üzerine inşa edilen tüm Python, OpenJDK ve Ruby imajlarında ve hatta potansiyel olarak bu imajlar üzerine inşa edilen uygulamalarda da mevcut olacaktır. Bu zincirleme etki, tek bir güvenlik açığının neden olduğu potansiyel hasarı büyütür.
 
-\begin{figure}
+\begin{figure}[!htbp]
     \centering
     \includegraphics[width=1\linewidth]{images/s2/os-images-by-period.png}
     \caption{OS imajlarına ait zafiyet sayıları.}\label{fig:os-images-by-period}
@@ -691,7 +691,7 @@ Programlama dili imajları birçok imaj tarafından temel imaj olarak kullanıl�
 
 Şekil~\ref{fig:proglang-by-periods} ve tablo~\ref{tab:proglang-by-periods}'da programlama dillerinin farklı dönemlerdeki güvenlik açıkları listelenmiştir. Güncellenmiş imajların eski imajlara göre çok daha az güvenlik açığı içerdiği gözlemlenebilir.
 
-\begin{figure}
+\begin{figure}[!htbp]
     \centering
     \includegraphics[width=1\linewidth]{images/s2/proglang-by-periods.png}
     \caption{Programlama dili imajlarının zafiyet sayısı.}\label{fig:proglang-by-periods}
@@ -724,11 +724,11 @@ Programlama dili imajları birçok imaj tarafından temel imaj olarak kullanıl�
 
 \subsection{Zafiyet Düzeltilme Durumlarına Göre Dağılım}\label{subsec:fix-status}
 
-Her gün yeni güvenlik açıkları keşfedilmekte ve bu güvenlik açıklarını yamamak için sürekli olarak güncellemeler yayınlanmaktadır. Şekil~\ref{fig:vuln-fix-status}'da güvenlik açığı düzeltilme durumu bulunabilir. Dönem-1'deki güvenlik açıklarının çoğunun ``fixed'' statüsüne sahip olduğuna dikkat edin, yani güncellemeler uygulanarak bu zafiyetler tamamiyle giderilebilir. Aynı şey Dönem-2 için de söylenebilir. Ayrıca, ``not-fixed'' ve ``wont-fix'' zafiyet değişikliklerinin ``fixed'' durumuna kıyasla önemli ölçüde değişmediği söylenebilir.
+Her gün yeni güvenlik açıkları keşfedilmekte ve bu güvenlik açıklarını yamamak için sürekli olarak güncellemeler yayınlanmaktadır. Şekil~\ref{fig:vuln-fix-status}'da güvenlik açığı düzeltilme durumu bulunabilir. Dönem-1'deki güvenlik açıklarının çoğunun ``fixed'' statüsüne sahip olduğuna dikkat edin, yani güncellemeler uygulanarak bu zafiyetler tamamiyle giderilebilir. Aynı şey Dönem-2 için de söylenebilir. Ayrıca, ``not-fixed'' ve ``wont-fix'' zafiyet değişikliklerinin ``fixed'' durumuna kıyasla önemli ölçüde değişmemiştir.
 
-\begin{figure}
+\begin{figure}[!htbp]
     \centering
-    \includegraphics[width=1\linewidth]{images/s2/vuln-fix-status.png}
+    \includegraphics[width=.8\linewidth]{images/s2/vuln-fix-status.png}
     \caption{Güvenlik Açığı Düzeltme Durumu}\label{fig:vuln-fix-status}
 \end{figure}
 
