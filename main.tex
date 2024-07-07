@@ -66,6 +66,7 @@ Tez kapsamında literatüre yapılan katkılar şunlardır:
 Tez aşağıdaki şekilde düzenlenmiştir: Bölüm~\ref{ch:literatur}'de bu alanda yapılan benzer çalışmalar tartışıldı, Bölüm~\ref{ch:methodology}'de tezde kullanılan araştırma metodolojisinin nasıl yürütüldüğü anlatıldı, Bölüm~\ref{ch:arastirma1}'de Docker imaj tarama araçlarının etkinliği çeşitli metrikler ile değerlendirildi, Bölüm~\ref{ch:arastirma2}'de popüler Docker imajlarının zaman içerisindeki zafiyet değişimi araştırıldı ve Bölüm~\ref{ch:kapanis}'da tezde elde edilen bulgular kısaca değerlendirilerek çalışma sonlandırılmıştır.
 
 \chapter{Literatür Taraması}\label{ch:literatur}
+% \vspace{5mm}
 
 Konteyner güvenliği her zaman ilgi çekici bir konu olmuş ve bu alanda çeşitli çalışmalar yapılmıştır. Bunlardan bazıları imaj tarama araçlarını kullanarak konteynerlerin güvenliğini değerlendirmiş, bazıları konteyner imajlarına yönelik tedarik zinciri saldırılarını değerlendirmiş, bazıları konteyner orkestrasyon platformlarını değerlendirmiş ve bazıları Kubernetes ortamındaki CVE'leri değerlendirmiştir. Tez kapsamında bunlardan bazılarına değinilmiştir.
 
@@ -89,6 +90,7 @@ Tez kapsamında, Docker imaj tarama araçlarının etkinliği ve Docker imajlar�
     \item Alt bölüm~\ref{sec:tarama-islemi}'te seçilen Docker imajlarının nasıl tarandığı ve tarama süreci anlatılmıştır.
     \item Alt bölüm~\ref{sec:DataProcessing}'de tarama sonuçlarının nasıl işlendiği açıklanmıştır.
 \end{maddelendir}
+\vspace{+12pt}
 
 \section{Tarama Aracı Seçim Stratejisi}\label{subsec:scanner-tool-selection}
 
@@ -728,7 +730,7 @@ Her gün yeni güvenlik açıkları keşfedilmekte ve bu güvenlik açıkların�
 
 \begin{figure}[!htbp]
     \centering
-    \includegraphics[width=.8\linewidth]{images/s2/vuln-fix-status.png}
+    \includegraphics[width=.6\linewidth]{images/s2/vuln-fix-status.png}
     \caption{Güvenlik Açığı Düzeltme Durumu}\label{fig:vuln-fix-status}
 \end{figure}
 
@@ -755,6 +757,7 @@ Tez sonuçları şu şekilde listelenebilir:
     \item Programlama dillerine ait imajların güncellenmedikleri taktirde 2 veya 3 kat daha fazla zafiyet içerebildiği görülmüştür.
     \item Taramalar sonucunda tespit edilen zafiyetlerin çoğunun güncellemelerin uygulanması ile düzeltilebileceği tespit edilmiştir.
 \end{maddelendir}
+\vspace{+12pt}
 
 Bu tez göstermiştir ki, Docker imajlarının güvenliği büyük ölçüde güncellemeler ve uygun tarama araçlarının kullanılmasıyla artırılabilir. Docker imaj güvenliği bulut tabanlı teknolojilerin ve yazılım geliştirme süreçlerinin önemli bir parçası olmaya devam edecektir. Bu alandaki çalışmaların devam etmesi, imaj güvenliğini daha da ileriye taşıyacak ve daha güvenli yazılımların oluşturulmasına yardımcı olacaktır.
 

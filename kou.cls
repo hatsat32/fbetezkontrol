@@ -406,7 +406,7 @@
 {}
 {0pt}
 {\addcontentsline{toc}{chapter}{#1}\MakeUppercase{#1}}
-\titlespacing{\chapter}{0pt}{-\baselineskip-\headheight}{-\baselineskip + 12pt}
+\titlespacing{\chapter}{0pt}{-\baselineskip-\headheight}{-\baselineskip + 24pt}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % İkinci derece bölüm başlığının düzenlenmesi.
@@ -421,7 +421,7 @@
 {}
 {0pt}
 {\addcontentsline{toc}{section}{#1}#1}
-\titlespacing{\section}{0pt}{\gTitleTopSpace}{\gTitleBottomSpace}
+\titlespacing{\section}{0pt}{\gTitleTopSpace + 12pt}{\gTitleBottomSpace + 12pt}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Üçüncü derece bölüm başlığının düzenlenmesi.
@@ -436,7 +436,7 @@
 {}
 {0pt}
 {\addcontentsline{toc}{subsection}{#1}#1}
-\titlespacing{\subsection}{0pt}{\gTitleTopSpace}{\gTitleBottomSpace}
+\titlespacing{\subsection}{0pt}{\gTitleTopSpace + 12pt}{\gTitleBottomSpace + 12pt}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Dördüncü derece bölüm başlığının düzenlenmesi. 
@@ -451,7 +451,7 @@
 {}
 {0pt}
 {\addcontentsline{toc}{subsubsection}{#1}#1}
-\titlespacing{\subsubsection}{0pt}{\gTitleTopSpace}{\gTitleBottomSpace}
+\titlespacing{\subsubsection}{0pt}{\gTitleTopSpace + 12pt}{\gTitleBottomSpace + 12pt}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -693,7 +693,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Etik Beyan ve Araştırma Fonu Desteği Sayfası
-\newcommand{\gCheck}{\checkmark}
+\newcommand{\gCheck}{\Large\checkmark}
 \NewDocumentCommand{\etikolustur}{ O{1} O{................................} O{................................}}
 {
 	\cleardoublepage\phantomsection\addcontentsline{toc}{chapter}{Etik Beyan ve Araştırma Fonu Desteği}
