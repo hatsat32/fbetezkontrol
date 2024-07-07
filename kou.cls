@@ -406,7 +406,7 @@
 {}
 {0pt}
 {\addcontentsline{toc}{chapter}{#1}\MakeUppercase{#1}}
-\titlespacing{\chapter}{0pt}{-\baselineskip-\headheight}{-\baselineskip + 24pt}
+\titlespacing{\chapter}{0pt}{-\baselineskip-\headheight}{-\baselineskip + 12pt}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % İkinci derece bölüm başlığının düzenlenmesi.

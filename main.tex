@@ -5,6 +5,7 @@
 % SVSM: TZPM: Tekil Zafiyet Puanlama Metriği
 
 \chapter{Giriş}
+\vspace{12pt}
 
 %% docker nedir
 Docker, geliştiricilerin uygulamalarını ve bağımlılıklarını tek bir pakette bir araya getirmelerini sağlayan ve uygulamanın Linux tabanlı herhangi bir ortamda sorunsuz çalışmasını sağlayan bir konteyner teknolojisidir~\autocite{haque2020challenges}. Docker 2013 yılında PyCon'da tanıtıldı ve aynı yılın Mart ayında Solomon Hykes~\autocite{ThefutureofLinuxContainers} tarafından açık kaynaklı hale getirildi. Bu tarihten itibaren, bilişim ve teknoloji (IT) sektöründe oldukça popüler bir endüstri standardı haline gelmiştir. Bunun en büyük nedeni Docker imajlarının geleneksel sanal makinelere ve sanallaştırma teknolojisine göre çeşitli avantajlar sağlamasıdır.
@@ -66,7 +67,7 @@ Tez kapsamında literatüre yapılan katkılar şunlardır:
 Tez aşağıdaki şekilde düzenlenmiştir: Bölüm~\ref{ch:literatur}'de bu alanda yapılan benzer çalışmalar tartışıldı, Bölüm~\ref{ch:methodology}'de tezde kullanılan araştırma metodolojisinin nasıl yürütüldüğü anlatıldı, Bölüm~\ref{ch:arastirma1}'de Docker imaj tarama araçlarının etkinliği çeşitli metrikler ile değerlendirildi, Bölüm~\ref{ch:arastirma2}'de popüler Docker imajlarının zaman içerisindeki zafiyet değişimi araştırıldı ve Bölüm~\ref{ch:kapanis}'da tezde elde edilen bulgular kısaca değerlendirilerek çalışma sonlandırılmıştır.
 
 \chapter{Literatür Taraması}\label{ch:literatur}
-% \vspace{5mm}
+\vspace{12pt}
 
 Konteyner güvenliği her zaman ilgi çekici bir konu olmuş ve bu alanda çeşitli çalışmalar yapılmıştır. Bunlardan bazıları imaj tarama araçlarını kullanarak konteynerlerin güvenliğini değerlendirmiş, bazıları konteyner imajlarına yönelik tedarik zinciri saldırılarını değerlendirmiş, bazıları konteyner orkestrasyon platformlarını değerlendirmiş ve bazıları Kubernetes ortamındaki CVE'leri değerlendirmiştir. Tez kapsamında bunlardan bazılarına değinilmiştir.
 
@@ -81,6 +82,7 @@ Docker imajlarındaki güvenlik açıkları zaman içinde değişmektedir. Yeni 
 Bu bölümde değinilen çalışmalar konteyner ve imaj güvenliği üzerine yapılan  araştırmaların yalnızca bir bölümünü temsil etmektedir. Literatürde çok sayıda benzer çalışma mevcuttur.
 
 \chapter{Materyal ve Yöntemler}\label{ch:methodology}
+\vspace{12pt}
 
 Tez kapsamında, Docker imaj tarama araçlarının etkinliği ve Docker imajlarının güvenlik açıkları araştırılmıştır. Güvenlik açıkları ve imaj güvenliği sürekli olarak değişmektedir ve Docker imajlarının güvenlik durumunun zaman içerisinde nasıl değiştiğini değerlendirmek önemlidir. Bunu yapmak için şu iş akışı takip edildi:
 
@@ -173,6 +175,7 @@ Docker imajı güvenliğinin, analizimizde kullandığımız belirli metriklerin
 Bu kısıtlamalara rağmen, tez çalışmamız Docker imaj güvenliğine ilişkin değerli bilgiler vermektedir. Bu kısıtlamaları kabul ederek, tezde ortaya konulan Docker ekosistemindeki güvenlik riskleri değerlendirilebilir.
 
 \chapter{Araştırma 1}\label{ch:arastirma1}
+\vspace{12pt}
 
 Docker zafiyet tarama araçları, Docker imajı zafiyetlerinin neden olduğu artan saldırı yüzeyi nedeniyle çok önemlidir. Tarama araçlarının önemi, konteynerli ortamlardaki güvenlik açıklarını proaktif olarak tespit etme, değerlendirme ve ele alma becerilerinde yatmaktadır. Kuruluşlar bu araçları geliştirme ve dağıtım süreçlerine entegre ederek genel güvenlik durumlarını iyileştirebilir ve uygulamalarını ve verilerini daha iyi koruyabilirler~\autocite{sultan2019}.
 
@@ -345,7 +348,7 @@ Bu sayılardan ve istatistiklerden, Trivy'nin \%67 isabet oranıyla en iyi perfo
 
 \begin{figure}[!htbp]
     \centering
-    \includegraphics[width=1\linewidth]{images/s1/DHR.png}
+    \includegraphics[width=.8\linewidth]{images/s1/DHR.png}
     \caption{Tarama araçları zafiyet tespiti oranları.}\label{fig:hit-and-miss}
 \end{figure}
 
@@ -420,6 +423,7 @@ Bu rakamlar, Trivy'nin \%44 oranla en iyi performansı gösterdiğini, Grype'ın
 \end{figure}
 
 \chapter{Araştırma 2}\label{ch:arastirma2}
+\vspace{12pt}
 
 Her gün yeni güvenlik açıkları keşfedilmekte ve bu açıkları düzeltmek için güvenlik güncellemeleri yayınlanmaktadır. Dolayısıyla bir Docker imajının zaman içerisindeki güvenlik zafiyet durumu farklı olmaktadır. Tezin bu bölümde Docker imaj zafiyetlerinin zaman içerisindeki değişimine odaklanılmıştır. Temel olarak en popüler 360 docker imajının 3 farklı zaman dilimindeki sürümleri taranmış ve zaman dilimleri arasındaki zafiyet durumları incelenmiştir.
 
@@ -735,6 +739,7 @@ Her gün yeni güvenlik açıkları keşfedilmekte ve bu güvenlik açıkların�
 \end{figure}
 
 \chapter{Sonuçlar ve Öneriler}\label{ch:kapanis}
+\vspace{12pt}
 
 Docker imajlarının kullanımı, bilgi teknolojileri alanında uygulama ve yazılım geliştirmeyi kolaylaştırmıştır. Aynı zamanda yeni güvenlik problemlerini de beraberinde getirmiştir. Bu tez çalışmasında Docker imajlarındaki güvenlik açıklarının zaman içerisindeki değişiminin incelenmesi ve araştırılmasının yanı sıra mevcut Docker imaj tarama araçlarının etkinliği de ele alınmaktadır.
 
@@ -762,6 +767,7 @@ Tez sonuçları şu şekilde listelenebilir:
 Bu tez göstermiştir ki, Docker imajlarının güvenliği büyük ölçüde güncellemeler ve uygun tarama araçlarının kullanılmasıyla artırılabilir. Docker imaj güvenliği bulut tabanlı teknolojilerin ve yazılım geliştirme süreçlerinin önemli bir parçası olmaya devam edecektir. Bu alandaki çalışmaların devam etmesi, imaj güvenliğini daha da ileriye taşıyacak ve daha güvenli yazılımların oluşturulmasına yardımcı olacaktır.
 
 \chapter{Veri Erişilebilirliği}\label{sec:data-availability}
+\vspace{12pt}
 
 Bu tez kapsamında oluşturulan veriseti, bu alanda daha farklı çalışmaları teşvik etmek için paylaşılmıştır. Verisetimiz, çalışmada kullanılan Bash ve Python betik dosyaları, Ipynb dosyaları, tarama sonuçlarının JSON hali ile birlikte GitHub depomuzda paylaşılmıştır. Bu kaynaklara aşağıdaki bağlantıdan erişilebilir:
 
