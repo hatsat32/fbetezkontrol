@@ -375,6 +375,7 @@ VSM yöntemi DHR yöntemi ile benzer bir yaklaşımla çalışmaktadır. Bu metr
 Bir sonraki adımda, bölüm~\ref{subsec:ProposedMetric}'deki denklemi uygulayarak güvenlik açığı puanı metriklerini hesapladık. Sonuçlar tablo~\ref{tab:proposed-metric-results} ve şekil~\ref{fig:proposed-metric-results}'de görülebilir.
 
 \begin{table}[!htbp]
+    \vspace{12pt}
     \caption{Önerilen metrik ve DHR ile hesaplanan sonuçlar.}\label{tab:proposed-metric-results}
     \centering
     \begin{tabular}{ |c|c|c|c| }
@@ -576,9 +577,10 @@ Tablo~\ref{tab:most-vuln-images-p2}'de görüldüğü gibi Dönem-2'de ``circlec
     \end{tabular}
 \end{table}
 
-Tablo~\ref{tab:most-vuln-images-p3}'da görüldüğü gibi Dönem-3 içinde ``atlassian/default-image:latest'' en zafiyetli imajdır, ardından ``circleci/python:latest'' ve üçüncü olarak ``redash/redash:latest'' gelmektedir.
+Tablo~\ref{tab:most-vuln-images-p3}'de görüldüğü gibi Dönem-3'de ``atlassian/default-image:latest'' en zafiyetli imajdır, ardından ``circleci/python:latest'' ve üçüncü ``redash/redash:latest'' gelmektedir.
 
-\begin{table}[!htbp]
+\begin{table}[ht]
+    \vspace{12pt}
     \caption{Dönem-3'deki en zafiyetli docker imajları}\label{tab:most-vuln-images-p3}
     \centering
     \begin{tabular}{ |c|c|c|>{\bfseries}c| }
@@ -734,7 +736,7 @@ Her gün yeni güvenlik açıkları keşfedilmekte ve bu güvenlik açıkların�
 
 \begin{figure}[!htbp]
     \centering
-    \includegraphics[width=.6\linewidth]{images/s2/vuln-fix-status.png}
+    \includegraphics[width=.8\linewidth]{images/s2/vuln-fix-status.png}
     \caption{Güvenlik Açığı Düzeltme Durumu}\label{fig:vuln-fix-status}
 \end{figure}
 
