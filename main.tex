@@ -5,6 +5,7 @@
 % SVSM: TZPM: Tekil Zafiyet Puanlama Metriği
 
 \chapter{Giriş}
+\vspace{12pt}
 
 %% docker nedir
 Docker, geliştiricilerin uygulamalarını ve bağımlılıklarını tek bir pakette bir araya getirmelerini sağlayan ve uygulamanın Linux tabanlı herhangi bir ortamda sorunsuz çalışmasını sağlayan bir konteyner teknolojisidir~\autocite{haque2020challenges}. Docker 2013 yılında PyCon'da tanıtıldı ve aynı yılın Mart ayında Solomon Hykes~\autocite{ThefutureofLinuxContainers} tarafından açık kaynaklı hale getirildi. Bu tarihten itibaren, bilişim ve teknoloji (IT) sektöründe oldukça popüler bir endüstri standardı haline gelmiştir. Bunun en büyük nedeni Docker imajlarının geleneksel sanal makinelere ve sanallaştırma teknolojisine göre çeşitli avantajlar sağlamasıdır.
@@ -42,11 +43,13 @@ Tez çalışmasının ikinci aşamasında, popüler Docker imajlarında güvenli
 
 Araştırmamız en etkili Docker imaj tarama aracının mevcut zafiyetlerin ciddi bir bölümünü tespit edemediğini gösterdi. Benzer şekilde güncellenmemiş Docker imajlarının güncellenmiş olanlarına göre yaklaşık iki katı zafiyet içerdiği görüldü.
 
-\textbf{Tez Çalışmasının Katkıları}
+% kontrol 1 de kaldırıldı
+% \textbf{Tez Çalışmasının Katkıları}
 
 Tez kapsamında literatüre yapılan katkılar şunlardır:
 
-\begin{itemize}
+\begin{maddelendir}[label=$\bullet$]
+% \begin{maddelendir}[label=\arabic*.]
     \item Araştırma, yaygın olarak tanınan üç Docker konteyner tarama aracı olan Trivy, Grype ve Snyk üzerinde gerçekleştirilmiş, bu araçlar çalışma kapsamında önerilen ve literatürde geçen metriklerle kıyaslanmıştır.
     \item Bildiğimiz kadarıyla bu tez, Snyk konteyner tarama aracını değerlendiren ilk çalışmadır.
     \item Docker Hub'da bulunan 439 docker konteyner imajı taranarak büyük ölçekli bir docker imaj değerlendirmesi gerçekleştirildi. İmajların zaman içerisindeki zafiyet değişimlerini tespit etmek için 364 docker imajı seçilmiş ve üç zaman diliminde 1092 docker imajı taranmıştır. % >>> 143 + 101 + 120
@@ -56,13 +59,15 @@ Tez kapsamında literatüre yapılan katkılar şunlardır:
     \item Ayrıca CentOS'un en çok güvenlik açığı içeren docker imajı olduğu, alpine ve photon'un ise en güvenli imajlar olduğu gözlemlenmiştir.
     \item CVE-1999{-}0236 gibi 2000 yılından önceki güvenlik açıklarının günümüzde hala keşfedilebildiği gözlemlenmiştir.
     \item Güncellenmiş docker imajlarının saldırı yüzeyini önemli ölçüde azaltabildiği gözlemlenmiştir.
-\end{itemize}
+\end{maddelendir}
 
-\textbf{Tez Çalışmasının Organizasyonu}
+% kontrol 1 de kaldırıldı
+% \textbf{Tez Çalışmasının Organizasyonu}
 
 Tez aşağıdaki şekilde düzenlenmiştir: Bölüm~\ref{ch:literatur}'de bu alanda yapılan benzer çalışmalar tartışıldı, Bölüm~\ref{ch:methodology}'de tezde kullanılan araştırma metodolojisinin nasıl yürütüldüğü anlatıldı, Bölüm~\ref{ch:arastirma1}'de Docker imaj tarama araçlarının etkinliği çeşitli metrikler ile değerlendirildi, Bölüm~\ref{ch:arastirma2}'de popüler Docker imajlarının zaman içerisindeki zafiyet değişimi araştırıldı ve Bölüm~\ref{ch:kapanis}'da tezde elde edilen bulgular kısaca değerlendirilerek çalışma sonlandırılmıştır.
 
 \chapter{Literatür Taraması}\label{ch:literatur}
+\vspace{12pt}
 
 Konteyner güvenliği her zaman ilgi çekici bir konu olmuş ve bu alanda çeşitli çalışmalar yapılmıştır. Bunlardan bazıları imaj tarama araçlarını kullanarak konteynerlerin güvenliğini değerlendirmiş, bazıları konteyner imajlarına yönelik tedarik zinciri saldırılarını değerlendirmiş, bazıları konteyner orkestrasyon platformlarını değerlendirmiş ve bazıları Kubernetes ortamındaki CVE'leri değerlendirmiştir. Tez kapsamında bunlardan bazılarına değinilmiştir.
 
@@ -77,21 +82,24 @@ Docker imajlarındaki güvenlik açıkları zaman içinde değişmektedir. Yeni 
 Bu bölümde değinilen çalışmalar konteyner ve imaj güvenliği üzerine yapılan  araştırmaların yalnızca bir bölümünü temsil etmektedir. Literatürde çok sayıda benzer çalışma mevcuttur.
 
 \chapter{Materyal ve Yöntemler}\label{ch:methodology}
+\vspace{12pt}
 
 Tez kapsamında, Docker imaj tarama araçlarının etkinliği ve Docker imajlarının güvenlik açıkları araştırılmıştır. Güvenlik açıkları ve imaj güvenliği sürekli olarak değişmektedir ve Docker imajlarının güvenlik durumunun zaman içerisinde nasıl değiştiğini değerlendirmek önemlidir. Bunu yapmak için şu iş akışı takip edildi:
 
-\begin{itemize}
+\begin{maddelendir}[label=$\bullet$]
     \item Alt bölüm~\ref{subsec:scanner-tool-selection}'de, bir grup imaj tarama aracı araştırılmış ve seçilmiştir.
     \item Alt bölüm~\ref{subsec:image-selection-strategy}'de Docker Hub'dan üç kategoriden olmak üzere en popüler Docker imajları seçilmiştir.
     \item Alt bölüm~\ref{sec:tarama-islemi}'te seçilen Docker imajlarının nasıl tarandığı ve tarama süreci anlatılmıştır.
     \item Alt bölüm~\ref{sec:DataProcessing}'de tarama sonuçlarının nasıl işlendiği açıklanmıştır.
-\end{itemize}
+\end{maddelendir}
+\vspace{+12pt}
 
 \section{Tarama Aracı Seçim Stratejisi}\label{subsec:scanner-tool-selection}
 
 Docker imajlarını taramak için çok sayıda araç online olarak bulunabilir. Bazıları ücretsiz, açık kaynak kodlu ve Github/Gitlab üzerinden erişilebilirken, diğerleri ticari olarak satılmaktadır. İlk olarak, Github'dan başlanarak diğer sitelerde, bloglarda~\autocite{TechbeaconDockersecurity}~\autocite{5opensourcetools}~\autocite{geekflare11Container} imaj tarama araçları araştırılmıştır. İlk araştırmadan sonra, tarama araçları kullanılabilirlik, popülerlik, güncellik ve fiyatlandırma temelinde değerlendirildi. Mevcut tarama araçları tablo~\ref{tab:scanningtoolstable}'deki gibi listelendi:
 
-\begin{table}
+\begin{table}[!htbp]
+    \caption{Docker imajı zafiyet tarama araçları.}\label{tab:scanningtoolstable}
     \centering
     \begin{tabular}{ |c|c|c|c| }
      \hline
@@ -108,7 +116,6 @@ Docker imajlarını taramak için çok sayıda araç online olarak bulunabilir. 
         Qualys Container Security & & Qualys Security & Ücretli \\
         \hline
     \end{tabular}
-    \caption{Docker imajı zafiyet tarama araçları.}\label{tab:scanningtoolstable}
 \end{table}
 
 Tez çalışmasında, kurulumu ve kullanımı zor olduğu, basit bir CLI arayüzüne ve iyi bir dokümantasyona sahip olmadığı için Clair hariç tutulmuştur. Dagda (son commit 2021~\autocite{DagdaGithub}) gibi güncel olmayan imaj tarama araçları, güncel güvenlik açıklarını bulamadıkları için hariç tutulmuştur. Snyk tabanlı Docker taraması da doğrudan Snyk kullanıldığı için değerlendirme dışı bırakılmıştır. Ticari araçlar, deneme sürümleri mevcut olmayabileceğinden veya yalnızca sınırlı işlevselliğe sahip olabileceğinden dolayı dahil edilmemiştir. Sonuç olarak, tez için Trivy, Grype ve Snyk tarama araçları seçilmiştir.
@@ -121,7 +128,8 @@ Docker imajlarını listelemek için Docker Hub API'si kullanılmıştır. İlk 
 
 Toplamda, Docker Hub'da barındırılan ve Tablo~\ref{tab:secilen-imajlar}'de listelenen en çok kullanılan 439 docker imajı seçildi.
 
-\begin{table}
+\begin{table}[!htbp]
+    \caption{Tez çalışması için başlangıçta seçilen Docker imajları.}\label{tab:secilen-imajlar}
     \centering
     \begin{tabular}{ |c|c| }
         \hline
@@ -132,7 +140,6 @@ Toplamda, Docker Hub'da barındırılan ve Tablo~\ref{tab:secilen-imajlar}'de li
         Open Source & 129 \\
         \hline
     \end{tabular}
-    \caption{Tez çalışması için başlangıçta seçilen Docker imajları.}\label{tab:secilen-imajlar}
 \end{table}
 
 \section{Tarama İşlemi}\label{sec:tarama-islemi}
@@ -168,6 +175,7 @@ Docker imajı güvenliğinin, analizimizde kullandığımız belirli metriklerin
 Bu kısıtlamalara rağmen, tez çalışmamız Docker imaj güvenliğine ilişkin değerli bilgiler vermektedir. Bu kısıtlamaları kabul ederek, tezde ortaya konulan Docker ekosistemindeki güvenlik riskleri değerlendirilebilir.
 
 \chapter{Araştırma 1}\label{ch:arastirma1}
+\vspace{12pt}
 
 Docker zafiyet tarama araçları, Docker imajı zafiyetlerinin neden olduğu artan saldırı yüzeyi nedeniyle çok önemlidir. Tarama araçlarının önemi, konteynerli ortamlardaki güvenlik açıklarını proaktif olarak tespit etme, değerlendirme ve ele alma becerilerinde yatmaktadır. Kuruluşlar bu araçları geliştirme ve dağıtım süreçlerine entegre ederek genel güvenlik durumlarını iyileştirebilir ve uygulamalarını ve verilerini daha iyi koruyabilirler~\autocite{sultan2019}.
 
@@ -199,7 +207,8 @@ Güvenlik açığı tarama araçlarını yalnızca tespit sayılarına göre de�
 
 Güvenlik açıklarının önem dereceleri Ortak Güvenlik Açığı Puanlama Sistemine (CVSS) göre kategorize edilmektedir. CVSS, bir güvenlik açığının temel özelliklerini yakalamak ve ciddiyetini yansıtan sayısal bir puan üretmek için bir yol sağlar~\autocite{CVSSMainPage}. Şu anda CVSS'nin 4 versiyonu bulunmaktadır. En son versiyon olan 4.\ versiyon 2023 yılında yayınlanmıştır; ancak mevcut verilerin sınırlı olması nedeniyle bu tez kapsamında kullanılmamıştır. Bunun yerine, CVSS puanlarının sürüm 3 ve sürüm 2'si kullanılmıştır. Her sürüm şiddet ve ciddiyet puanları içerir ve tüm puanlar tablo~\ref{tab:cvss-severity} ve~\autocite{CVSSSpecification}'de belirtildiği gibi nitel derecelendirmelerle eşleştirilebilir.
 
-\begin{table}
+\begin{table}[!htbp]
+    \caption{Niteliksel şiddet derecelendirme ölçeği.}\label{tab:cvss-severity}
     \centering
     \begin{tabular}{ |c|c|c| }
         \hline
@@ -212,7 +221,6 @@ Güvenlik açıklarının önem dereceleri Ortak Güvenlik Açığı Puanlama Si
         Kritik (Critical)  & 9.0~-~10.0 \\
         \hline
     \end{tabular}
-    \caption{Niteliksel şiddet derecelendirme ölçeği.}\label{tab:cvss-severity}
 \end{table}
 
 Bu tez kapsamında CVSS tabanlı bir Güvenlik Açığı Tarama Metriği (VSM), tarama araçlarını kendi aralarında karşılaştırmak için, keşfettikleri güvenlik açıklarının risk seviyelerini dikkate alarak kullanılmıştır. DHR yöntemine benzer şekilde VSM yöntemi de Hit ve Miss güvenlik açıklarını kullanır. Bir tarama aracının $N$ güvenlik açığı tespit ettiğini ve tüm tarama araçları tarafından tespit edilen tüm güvenlik açıklarından $M$ güvenlik açığını kaçırdığını düşünelim. Her bir güvenlik açığına, $i$'inci güvenlik açığı için $n_i$ ile gösterilen bir CVSS puanı atanır. VSM, Denklem~\ref{eq:vsm} kullanılarak hesaplanabilir:
@@ -248,7 +256,7 @@ Araçların karşılaştırılmasına, tespit edilen güvenlik açıklarının i
 
 Güvenlik açıkları ayrıca imaj türü, imaj adı, paket adı ve paket sürümüne göre etiketlenmiştir. Bu etiketlemenin ardından, her bir araç tarafından bulunan toplam güvenlik açığı sayısı ve tüm araçların toplamı Şekil~\ref{fig:fig1}-b'de gösterilmektedir. Şekil~\ref{fig:fig1}'de verilen grafikler karşılaştırıldığında, Grype tekil güvenlik açığı sayısı bakımından önde gelirken, Trivy imajlarda bulunan toplam güvenlik açığı sayısında önemli ölçüde üstünlük sağlamaktadır. Daha fazla açıklık getirmek gerekirse, Trivy'nin 439 docker imajını taradıktan sonra bulduğu farklı güvenlik açığı sayısı 6779 iken, Trivy'nin tüm imajlarda bulduğu toplam güvenlik açığı sayısı 111865'tir. Benzer bir durum diğer araçlar için de geçerlidir. Grafikler arasında Trivy ve Grype araçları arasındaki sıralama değişse de Snyk her iki grafikte de sürekli olarak son sırada yer almaktadır.
 
-\begin{figure}
+\begin{figure}[!htbp]
 	\centering
 	\begin{subfigure}[]{\linewidth/2}
 		\includegraphics[width=\linewidth]{images/s1/vulCountsUniq.png}
@@ -266,7 +274,7 @@ Güvenlik açıkları ayrıca imaj türü, imaj adı, paket adı ve paket sürü
 
 Tarama araçlarının benzersiz ve toplam güvenlik açığı tespit sayılarının kesişim diyagramları sırasıyla Şekil~\ref{fig:fig2}-a ve Şekil~\ref{fig:fig2}-b'de Venn diyagramlarında gösterilmiştir. Şekil~\ref{fig:fig2}-a'daki Venn diyagramına bakıldığında, tüm araçlar tarafından tespit edilen ortak eşsiz güvenlik açığı sayısının 4171 olduğu görülebilir. Bu sayı toplam tespit edilen güvenlik açığı sayısının (8752) yarısından azdır. Bu, docker imajlarındaki güvenlik açıklarının birden fazla araç tarafından daha iyi kapsanabileceğini göstermektedir. Benzer bir sonuç, Şekil~\ref{fig:fig2}-b'de verilen ve tüm imajlar tarandıktan sonra bulunan güvenlik açıklarını gösteren Venn diyagramı incelenerek de çıkarılabilir.
 
-\begin{figure}
+\begin{figure}[!htbp]
 	\centering
 	\begin{subfigure}[Figure A]{\linewidth/2}
 		\includegraphics[width=1\linewidth]{images/s1/vulCountsVennUniq.png}
@@ -282,7 +290,7 @@ Tarama araçlarının benzersiz ve toplam güvenlik açığı tespit sayıların
 
 Şekil~\ref{fig:vulnerabilities-by-severity} ve tablo~\ref{tab:scanner-vuln-severity}'de güvenlik açığı tespitlerini ciddiyete (severity) göre ayrılmış olarak görebiliriz. Tarama sürecinde, ihmal edilebilir ve bilinmeyen güvenlik açıklarını hariç tutuldu, çünkü ihmal edilebilir güvenlik açıkları ciddi hasara işaret etmez ve bilinmeyen güvenlik açıklarının CVSS puanları yoktur.
 
-\begin{figure}
+\begin{figure}[!htbp]
 	\centering
 	\begin{subfigure}[Figure A]{\linewidth/2}
 		\includegraphics[width=1\linewidth]{images/s1/scanner-vuln-and-severity.png}
@@ -296,7 +304,8 @@ Tarama araçlarının benzersiz ve toplam güvenlik açığı tespit sayıların
 	\caption{Zafiyetlerin tarama aracına ve şiddete göre dağılımı.}\label{fig:fig3}
 \end{figure}
 
-\begin{table}
+\begin{table}[!htbp]
+    \caption{Tarayıcı aracına ve önem derecesine göre tespit edilen güvenlik açıkları.}\label{tab:scanner-vuln-severity}
     \centering
     \begin{tabular}{ |l|c|c|c|c| }
         \hline
@@ -307,7 +316,6 @@ Tarama araçlarının benzersiz ve toplam güvenlik açığı tespit sayıların
         Snyk  & 1302 & 5184  & 12.880 & 20.064 \\
         \hline
     \end{tabular}
-    \caption{Tarayıcı aracına ve önem derecesine göre tespit edilen güvenlik açıkları.}\label{tab:scanner-vuln-severity}
 \end{table}
 
 Kritik güvenlik açıkları en tehlikeli ve ciddi güvenlik açıklarıdır. Bu nedenle bu açıkları tespit etmek son derece önemlidir. Şekil~\ref{fig:vulnerabilities-by-severity} ve tablo~\ref{tab:scanner-vuln-severity}'de Trivy'nin 3879 kritik güvenlik açığı tespit ettiğini, Grype'ın 3041 kritik şiddette güvenlik açığı tespit ettiğini ve Snyk'in 1302 tespit ettiğini görebiliriz. Trivy ve ardından Grype kritik güvenlik açıklarını tespit etmede iyi performans göstermektedir. Ancak Snyk, Trivy ve Grype'a kıyasla yeterince iyi performans göstermemiş ve yaklaşık 2000 kritik güvenlik açığını gözden kaçırmıştır.
@@ -322,7 +330,8 @@ Genel olarak, Trivy en fazla sayıda güvenlik açığı tespit etmiş, onu krit
 
 Bu bölümde, isabet ve ıskalama sonuçlarını hesapladık. İlk olarak, tespit edilen tüm güvenlik açıklarından imaj adı, paket adı, paket sürümü ve CVE ID'sini filtreleyerek eşsiz (unique) güvenlik açıkları tespit ettik. Bu yöntemle toplamda 166.846 benzersiz güvenlik açığı tespit edildi. Daha sonra denklem~\ref{eq:dhr} uygulayarak zafiyet tespit oranları değerlendirildi. Sonuçlar tablo~\ref{tab:hit-and-miss} ve şekil~\ref{fig:hit-and-miss}'de görülebilir.
 
-\begin{table}
+\begin{table}[!htbp]
+    \caption{Araçların tespit isabet oranları.}\label{tab:hit-and-miss}
     \centering
     \begin{tabular}{ |c|c|c|c| }
         \hline
@@ -333,14 +342,13 @@ Bu bölümde, isabet ve ıskalama sonuçlarını hesapladık. İlk olarak, tespi
         Snyk  &  39.430 & 127.418 & 0.24 \\
         \hline
     \end{tabular}
-    \caption{Araçların tespit isabet oranları.}\label{tab:hit-and-miss}
 \end{table}
 
 Bu sayılardan ve istatistiklerden, Trivy'nin \%67 isabet oranıyla en iyi performansı gösterdiği sonucunu çıkarabiliriz. Trivy 111.865 adet güvenlik açığı tespit etmiştir, ancak yine de güvenlik açıklarının \%33'ünü kaçırmaktadır; kaçırdığı zafiyetlerin tam sayısı 54.981'dir. Yani en iyi tarama aracı güvenlik açıklarının \%33'ünü kaçırmaktadır. Sonra, Grype 54.099 güvenlik açığı tespit etmiştir ve 112.747 güvenlik açığını kaçırmıştır. Grype'ın DHR'si \%32'dir ve güvenlik açıklarının \%68'ini kaçırmaktadır. Son olarak, Snyk 39.430 güvenlik açığı tespit etmiştir ve \%24 DHR ile 127.418 güvenlik açığını kaçırmıştır. Bu istatistikler şekil~\ref{fig:hit-and-miss}'de görülebilir.
 
-\begin{figure}
+\begin{figure}[!htbp]
     \centering
-    \includegraphics[width=1\linewidth]{images/s1/DHR.png}
+    \includegraphics[width=.8\linewidth]{images/s1/DHR.png}
     \caption{Tarama araçları zafiyet tespiti oranları.}\label{fig:hit-and-miss}
 \end{figure}
 
@@ -350,7 +358,8 @@ Tespit İsabet Oranı (DHR) sonuçların değerlendirmesi için önemli bir metr
 
 VSM yöntemi DHR yöntemi ile benzer bir yaklaşımla çalışmaktadır. Bu metriklerin hesaplanabilmesi için birden fazla tarama aracının kullanılması gerekmektedir. Bütün tarama araçlarının bulduğu güvenlik açıkları ortak bir havuza toplanıp araçların Miss ($M$) değerleri bir aracın havuzda olup da bulamadığı güvenlik açığına göre hesaplanmaktadır. Bu çalışmada tarama araçlarını birbirlerinden bağımsız olarak değerlendirmek için  SVSM metriği önerilmiştir. Bu metrik VSM'de olduğu gibi zafiyetlerin risk seviyelerini göz önünde bulundurmaktadır. VSM'den farklı olarak sadece aracın bulduğu güvenlik zafiyetlerini kullanarak bir sayısal değer üretmektedir. VSM ve SVSM metriklerinde bulunan sayısal değerlerin bire yakın olması tarama aracının daha iyi olduğunu göstermektedir. SVSM sonuçları Tablo~\ref{tab:proposed-metric-results} ve Şekil~\ref{fig:proposed-metric-results}'de görülebilir.
 
-\begin{table}
+\begin{table}[!htbp]
+    \caption{Bir araç tarafından tespit edilen zafiyet CVSS puanlarının toplamı.}\label{tab:vuln-sum}
     \centering
     \begin{tabular}{ |c|c|c|c| }
         \hline
@@ -361,12 +370,12 @@ VSM yöntemi DHR yöntemi ile benzer bir yaklaşımla çalışmaktadır. Bu metr
         Snyk  & 256.872,0 \\
         \hline
     \end{tabular}
-    \caption{Bir araç tarafından tespit edilen zafiyet CVSS puanlarının toplamı.}\label{tab:vuln-sum}
 \end{table}
 
 Bir sonraki adımda, bölüm~\ref{subsec:ProposedMetric}'deki denklemi uygulayarak güvenlik açığı puanı metriklerini hesapladık. Sonuçlar tablo~\ref{tab:proposed-metric-results} ve şekil~\ref{fig:proposed-metric-results}'de görülebilir.
 
-\begin{table}
+\begin{table}[!htbp]
+    \caption{Önerilen metrik ve DHR ile hesaplanan sonuçlar.}\label{tab:proposed-metric-results}
     \centering
     \begin{tabular}{ |c|c|c|c| }
         \hline
@@ -377,18 +386,17 @@ Bir sonraki adımda, bölüm~\ref{subsec:ProposedMetric}'deki denklemi uygulayar
         Snyk  & 0.24 & 0.16 & 0.22 \\
         \hline
     \end{tabular}
-    \caption{Önerilen metrik ve DHR ile hesaplanan sonuçlar.}\label{tab:proposed-metric-results}
 \end{table}
 
 Bu rakamlar, Trivy'nin \%44 oranla en iyi performansı gösterdiğini, Grype'ın \%22 oranla ikinci sırada yer aldığını ve Snyk'in \%16 oranla üçüncü sırada olduğunu açıkça göstermektedir.
 
-% \begin{figure}
+% \begin{figure}[!htbp]
 %     \centering
 %     \includegraphics[width=1\linewidth]{images/proposed-metric-results.png}
 %     \caption{Önerilen metrik ile hesaplanan sonuçlar}\label{fig:proposed-metric-results}
 % \end{figure}
 
-\begin{figure}
+\begin{figure}[!htbp]
 	\centering
 	\begin{subfigure}[]{\linewidth/2}
 		\includegraphics[width=\linewidth]{images/s1/VSM.png}
@@ -408,13 +416,14 @@ Bu rakamlar, Trivy'nin \%44 oranla en iyi performansı gösterdiğini, Grype'ın
 
 İlk olarak VSR'miz DHR'den daha az oran göstermektedir. Bunun nedeni DHR'nin yalnızca tespit edilen güvenlik açığı sayısına dayanması, ancak bizim metriğimizde ortaya çıkan oranın güvenlik açığının CVSS puanlarına dayanmasıdır. Örneğin tablo~\ref{tab:scanner-vuln-severity}'de Trivy'nin 3879 kritik, 21.904 yüksek, 42.778 orta ve 43.304 düşük şiddette güvenlik açığı tespit ettiği görülebilir. Bu önem dereceleri DHR için önemli değildir, ancak VSR için bu önem derecesi farkı sonuç oranını düşürür çünkü tarama araçları daha az kritik güvenlik açıkları tespit eder. Sonuç grafiğini şekil~\ref{fig:comparison-dhr-vsr}'da görebiliriz.
 
-\begin{figure}
+\begin{figure}[!htbp]
     \centering
     \includegraphics[width=1\linewidth]{images/s1/comparison-dhr-vsr.png}
     \caption{DHR ve VSR'nin Karşılaştırılması}\label{fig:comparison-dhr-vsr}
 \end{figure}
 
 \chapter{Araştırma 2}\label{ch:arastirma2}
+\vspace{12pt}
 
 Her gün yeni güvenlik açıkları keşfedilmekte ve bu açıkları düzeltmek için güvenlik güncellemeleri yayınlanmaktadır. Dolayısıyla bir Docker imajının zaman içerisindeki güvenlik zafiyet durumu farklı olmaktadır. Tezin bu bölümde Docker imaj zafiyetlerinin zaman içerisindeki değişimine odaklanılmıştır. Temel olarak en popüler 360 docker imajının 3 farklı zaman dilimindeki sürümleri taranmış ve zaman dilimleri arasındaki zafiyet durumları incelenmiştir.
 
@@ -430,7 +439,8 @@ Yukarıda bahsedilen nedenler seçim sürecini otomatikleştirmeyi imkansız hal
 
 Tezin bu bölümünde Docker imajlarının zaman içindeki güvenlik açığı değişikliklerine odaklanıldı. Bazı Docker imajları kullanımdan kaldırılmış ve bir yıldan uzun bir süre boyunca herhangi bir güncelleme almamıştır. Sonuç olarak, bu imajlar tüm tarama dönemlerinde aynı sonucu üretmektedir. Bu durum tezin amacımızla çelişmektedir, Bundan dolayı bir sonraki adımda güncellenmemiş imajlar tespit edildi ve listeden kaldırıldı. Bunu yapmak için, imaj ve etiket bilgileri Docker Hub API'sinden sorgulandı. Sorgudan imaj ID'leri ve hash değerleri elde edilmeye çalışıldı ancak sorgu sırasında herhangi bir imaj ID bilgisine rastlanmadı. Bundan dolayı karşılaştırmaya imaj ID'leri yerine hash değerleri ile devam edildi. Her bir imaj etiketinin amd64 imajına ait hash değeri API üzerinden elde edilmiş ve hash değeri üzerinden karşılaştırma yapılmıştır. Amd64'ün seçilmesinin nedeni, en yaygın olarak kullanılan mimarisi olmasıdır ve tüm imajlar tarafından desteklenmesidir. Karşılaştırma sonucunda aynı hash değerine sahip imajlar hariç tutuldu, tablo~\ref{tab:final-selected-images}'de detaylandırıldığı gibi toplamda 364 imaj seçildi ve seçilen imajlar taramaya hazırlandı.
 
-\begin{table}
+\begin{table}[!htbp]
+    \caption{Son olarak bu tez için seçilen Docker imajları.}\label{tab:final-selected-images}
     \centering
     \begin{tabular}{ |c|c|c| }
         \hline
@@ -441,7 +451,6 @@ Tezin bu bölümünde Docker imajlarının zaman içindeki güvenlik açığı d
         OSS & 120 \\
         \hline
     \end{tabular}
-    \caption{Son olarak bu tez için seçilen Docker imajları.}\label{tab:final-selected-images}
 \end{table}
 
 \subsection{Tarama İşlemi}
@@ -463,17 +472,17 @@ Son olarak, analizin kapsamı, işletim sistemleri ve programlama diline özgü 
 İlk adımda, sonuçlar güvenlik açığı tespit sayısına göre değerlendirilmiştir. Dönem-1'de tarama araçları 219.942 güvenlik açığı tespit ederek en yüksek sayıya ulaşmış, bunu 159.166 güvenlik açığı ile Dönem-2 ve 97.753 güvenlik açığı ile Dönem-3 izlemiştir. Sonuçlar şekil~\ref{fig:detected-vulns-by-period}'de gösterilmektedir. Şekilde görüldüğü gibi~\ref{fig:detected-vulns-by-period} güncel olmayan docker imajlarındaki güvenlik açığı sayıları önemli ölçüde artmaktadır. Dönem-2, Dönem-3'e göre \%62,82 daha fazla güvenlik açığı içermekte ve benzer şekilde Dönem-1, Dönem-3'e göre \%125 daha fazla güvenlik açığı içermektedir. Bu rakamlardan, 1 yıl boyunca güncellenmemiş imajların güncellenmiş olanlara kıyasla iki kattan fazla güvenlik açığı içerdiğini söyleyebiliriz.
 % p2/p3 162.82 p1/p3 225.0
 
-\begin{figure}
+\begin{figure}[!htbp]
     \centering
-    \includegraphics[width=1\linewidth]{images/s2/detected-vulns-by-period.png}
+    \includegraphics[width=.8\linewidth]{images/s2/detected-vulns-by-period.png}
     \caption{Tüm dönemlerdeki tarama araçlarına ait tespit edilen zafiyetler.}\label{fig:detected-vulns-by-period}
 \end{figure}
 
 Şekil~\ref{fig:detected-uniq-vulns-by-period} dönemlere göre eşsiz (unique) zafiyet tespitlerini gösterilmektedir. Dönem-1'den Dönem-3'e kadar tüm imajlarda 1138 benzersiz CVE zafiyeti tamamen çözülmüştür.
 
-\begin{figure}
+\begin{figure}[!htbp]
     \centering
-    \includegraphics[width=1\linewidth]{images/s2/detected-uniq-vulns-by-period.png}
+    \includegraphics[width=.8\linewidth]{images/s2/detected-uniq-vulns-by-period.png}
     \caption{Tüm dönemlerde tespit edilen benzersiz güvenlik açıkları}\label{fig:detected-uniq-vulns-by-period}
 \end{figure}
 
@@ -483,13 +492,14 @@ Bu analizden elde edilen sonuçlar, Docker imajlarıın düzenli olarak güncell
 
 Şekil~\ref{fig:vuln-severity-period-1} ve tablo~\ref{tab:vuln-severity-period-1} güvenlik açığı tespitlerini önem derecesine göre ayrılmış olarak görülmektedir. Tarama işlemi sırasında, ihmal edilebilir ve bilinmeyen güvenlik açıkları hariç tutulmuştur, çünkü bu güvenlik açıkları önemli bir riske sahip değildir.
 
-\begin{figure}
+\begin{figure}[!htbp]
     \centering
     \includegraphics[width=1\linewidth]{images/s2/vuln-severity-period-1.png}
     \caption{Şiddet ve döneme göre sonuçlar}\label{fig:vuln-severity-period-1}
 \end{figure}
 
-\begin{table}
+\begin{table}[!htbp]
+    \caption{Tarama aracına ve şiddete göre tespit edilen güvenlik açıkları.}\label{tab:vuln-severity-period-1}
     \centering
     \begin{tabular}{ |c|c|c|c|c| }
         \hline
@@ -500,12 +510,11 @@ Bu analizden elde edilen sonuçlar, Docker imajlarıın düzenli olarak güncell
         Dönem-3 & 41802 & 36477 & 16728 & 2746 \\
         \hline
     \end{tabular}
-    \caption{Tarama aracına ve şiddete göre tespit edilen güvenlik açıkları.}\label{tab:vuln-severity-period-1}
 \end{table}
 
 Kritik güvenlik açıkları en tehlikeli ve ciddi olanlardır, bu da tespit edilmelerini çok önemli kılar, yüksek ciddiyetli güvenlik açıkları kritik olanlardan daha az ciddi olsa da tespit edilmeleri yine de önemlidir. Şekil~\ref{fig:vuln-severity-period-1} ve tablo~\ref{tab:vuln-severity-period-1}'te, tüm dönemlerde güvenlik açığı sayısı zaman içinde azalmaktadır. Kritik ve yüksek güvenlik açıkları için güncel olmayan imajlar, güncellenmiş olanlara kıyasla iki kat daha fazla güvenlik açığı içermektedir.
 
-\begin{figure}
+\begin{figure}[!htbp]
     \centering
     \includegraphics[width=1\linewidth]{images/s2/severity-over-periods.png}
     \caption{Zafiyet şiddetlerinin dönemler içerisindeki dağılımı}\label{fig:severity-over-periods}
@@ -523,7 +532,8 @@ Docker imajlarındaki yüksek sayıdaki güvenlik açıkları önemli zararlara 
 
 Tablo~\ref{tab:most-vuln-images-p1} Dönem-1'e ait en fazla zafiyet sayısına sahip Docker imajları ``circleci/python:3.9.9-buster'', ardından ``apache/superset:2.0.1'' ve sonra ``library/hipache:0.3.1'' olarak gelmektedir. Bunlar Docker Hub'da en çok kullanılan Docker imajlarıdır. Bazı imajların güvenlik açıklarının ``apache/superset'', ``library/haskell'', ``library/perl'' gibi önemli ölçüde azaldığını görebiliriz. İlginçtir ki bazı imajların güvenlik açıkları ``circleci/openjdk'' ve ``library/hipache'' gibi dönemler boyunca artmaktadır. Normal koşullarda daha eski Docker imajları daha fazla güvenlik açığı içermesi gerekir fakat güncel sürümlerde eklenen yeni bağımlılıklar, paketler ve yeni özellikler daha fazla güvenli açığının oluşmasına neden olabilmektedir. Bu durum, yeni Docker imajlarının, eski imajlarda olmayan yeni türde güvenlik zafiyetlerine maruz kalma olasılığını artırmıştır.
 
-\begin{table}
+\begin{table}[!htbp]
+    \caption{Dönem-1'deki en zafiyetli docker imajları}\label{tab:most-vuln-images-p1}
     \centering
     \begin{tabular}{ |c|>{\bfseries}c|c|c| }
         \hline
@@ -541,12 +551,12 @@ Tablo~\ref{tab:most-vuln-images-p1} Dönem-1'e ait en fazla zafiyet sayısına s
         cimg/ruby        & 2917 & 2574 &  960 \\
         \hline
     \end{tabular}
-    \caption{Dönem-1'deki en zafiyetli docker imajları}\label{tab:most-vuln-images-p1}
 \end{table}
 
 Tablo~\ref{tab:most-vuln-images-p2}'de görüldüğü gibi Dönem-2'de ``circleci/python:3.9.9-buster'' hala en zafiyetli Docker imajıdır ve bu imaj önceki dönemden itibaren herhangi bir güvenlik güncellemesi almamıştır. İkinci olarak ``library/hipache:0.3.1'' ve üçüncü olarak ``circleci/openjdk:17-buster'' gelmektedir. Genel olarak çoğu imajın güvenlik açıkları dönemler içinde azalmaktadır.
 
-\begin{table}
+\begin{table}[!htbp]
+    \caption{Dönem-2'deki en zafiyetli docker imajları}\label{tab:most-vuln-images-p2}
     \centering
     \begin{tabular}{ |c|c|>{\bfseries}c|c| }
         \hline
@@ -564,12 +574,12 @@ Tablo~\ref{tab:most-vuln-images-p2}'de görüldüğü gibi Dönem-2'de ``circlec
         library/elixir     & 3059 & 2211 & 1032 \\
         \hline
     \end{tabular}
-    \caption{Dönem-2'deki en zafiyetli docker imajları}\label{tab:most-vuln-images-p2}
 \end{table}
 
 Tablo~\ref{tab:most-vuln-images-p3}'da görüldüğü gibi Dönem-3 içinde ``atlassian/default-image:latest'' en zafiyetli imajdır, ardından ``circleci/python:latest'' ve üçüncü olarak ``redash/redash:latest'' gelmektedir.
 
-\begin{table}
+\begin{table}[!htbp]
+    \caption{Dönem-3'deki en zafiyetli docker imajları}\label{tab:most-vuln-images-p3}
     \centering
     \begin{tabular}{ |c|c|c|>{\bfseries}c| }
         \hline
@@ -587,7 +597,6 @@ Tablo~\ref{tab:most-vuln-images-p3}'da görüldüğü gibi Dönem-3 içinde ``at
         cimg/python             & 2479 & 2039 & 1357 \\
         \hline
     \end{tabular}
-    \caption{Dönem-3'deki en zafiyetli docker imajları}\label{tab:most-vuln-images-p3}
 \end{table}
 
 Üç tablo göz önünde bulundurulduğunda, bu docker imajlarını kullanmaktan kaçınmanızı öneririz. Mümkünse sıkılaştırılmış (hardened) imajları kullanmayı düşünün.
@@ -596,9 +605,9 @@ Tablo~\ref{tab:most-vuln-images-p3}'da görüldüğü gibi Dönem-3 içinde ``at
 
 Şekil~\ref{fig:image-type-by-periods}'de imaj kategorileri ve tespit edilen güvenlik açıkları görülmektedir. Güncellenmemiş docker imajları güncellenmiş olanlara kıyasla iki kat daha fazla güvenlik açığı içermektedir.
 
-\begin{figure}
+\begin{figure}[!htbp]
     \centering
-    \includegraphics[width=1\linewidth]{images/s2/image-type-by-periods.png}
+    \includegraphics[width=.8\linewidth]{images/s2/image-type-by-periods.png}
     \caption{Dönemlere göre imaj türü güvenlik açıkları}\label{fig:image-type-by-periods}
 \end{figure}
 
@@ -606,7 +615,7 @@ Güncel olmayan yazılım imajlarının, güncel olanlara kıyasla önemli ölç
 
 Şekil~\ref{fig:image-type-severity}'da gösterildiği gibi, veriler açık bir eğilimi doğrulamaktadır: güncel olmayan yazılım imajları, güncellenmiş benzerlerine kıyasla sürekli olarak daha fazla sayıda güvenlik açığı taşımaktadır. Bu güvenlik açığı farkı, çeşitli imaj türlerinde ve tüm güvenlik açığı şiddetlerinde belirgindir.
 
-\begin{figure}
+\begin{figure}[!htbp]
     \centering
     \includegraphics[width=1\linewidth]{images/s2/image-type-severity.png}
     \caption{Zafiyetlerin imaj kategorilerine ve şiddete göre dağılımı.}\label{fig:image-type-severity}
@@ -618,7 +627,8 @@ Bu eğilim, güncel yazılım imajlarını korumanın kritik önemini vurgulamak
 
 Tablo~\ref{tab:oldest-cves-count} bölümünde tüm imajlar içerisinde tespit edilen en eski CVE'ler ve bunların tespit sıklıkları listelenmiştir. İlginç bir şekilde, çok eski CVE'ler hala Docker imajlarında bulunabilmektedir.
 
-\begin{table}
+\begin{table}[!htbp]
+    \caption{Tespit edilen en eski CVE'ler ve tespit sayıları.}\label{tab:oldest-cves-count}
     \centering
     \begin{tabular}{ |c|c| }
         \hline
@@ -646,20 +656,20 @@ Tablo~\ref{tab:oldest-cves-count} bölümünde tüm imajlar içerisinde tespit e
         CVE-2007{-}1667  & 3 \\
         \hline
     \end{tabular}
-    \caption{Tespit edilen en eski CVE'ler ve tespit sayıları.}\label{tab:oldest-cves-count}
 \end{table}
 
 \subsection{İşletim Sistemi İmajları}\label{subsec:os-images}
 
 İşletim Sistemi (OS) imajları, Docker imajlarının büyük çoğunluğu için temel oluşturmaktadır. Python, OpenJDK ve Ruby gibi popüler imajlar, temel olarak OS imajlarından yararlanır. Bu katmanlı yaklaşım, birçok geliştiricinin uygulamaları için temel imajlar üzerine inşa etmesiyle daha da genişlemektedir. Sonuç olarak, bir işletim sistemi imajında bulunan herhangi bir güvenlik açığı, onu miras alan sonraki tüm imajlara yayılabilir. Bu miras zinciri, temel olarak kullanılan işletim sistemi imajlarını korumanın kritik öneminin altını çizmektedir. Zafiyetli bir temel (base) işletim sistemi imajının etkisi geniş ve kapsamlı olabilir. Yaygın olarak kullanılan bir Debian imajında bulunabilecek kritik bir güvenlik açığının bulunduğu bir senaryo düşünün. Bu güvenlik açığı Debian imajının kendisiyle sınırlı kalmayacaktır; aynı zamanda üzerine inşa edilen tüm Python, OpenJDK ve Ruby imajlarında ve hatta potansiyel olarak bu imajlar üzerine inşa edilen uygulamalarda da mevcut olacaktır. Bu zincirleme etki, tek bir güvenlik açığının neden olduğu potansiyel hasarı büyütür.
 
-\begin{figure}
+\begin{figure}[!htbp]
     \centering
     \includegraphics[width=1\linewidth]{images/s2/os-images-by-period.png}
     \caption{OS imajlarına ait zafiyet sayıları.}\label{fig:os-images-by-period}
 \end{figure}
 
-\begin{table}
+\begin{table}[!htbp]
+    \caption{İşletim sistemi imajlarında periyotlara göre tespit edilen güvenlik açıkları.}\label{tab:os-images-by-period}
     \centering
     \begin{tabular}{ |c|c|c|c|c| }
         \hline
@@ -675,7 +685,6 @@ Tablo~\ref{tab:oldest-cves-count} bölümünde tüm imajlar içerisinde tespit e
         library/ubuntu      &  206 &   72 & 46 \\
         \hline
     \end{tabular}
-    \caption{İşletim sistemi imajlarında periyotlara göre tespit edilen güvenlik açıkları.}\label{tab:os-images-by-period}
 \end{table}
 
 Şekil~\ref{fig:os-images-by-period}'de görüldüğü gibi RHEL tabanlı dağıtımlarda en zafiyetli işletim sistemi docker imajı CentOS'tur. Bunun nedeni, Docker Hub'daki CentOS imajlarının bir yıl içinde herhangi bir güncelleme almamış olmasıdır. Oracle Linux ve Rocky Linux gibi diğer RHEL dağıtımları çok daha az güvenlik açığına sahiptir. Herhangi bir kullanım durumu için, Oracle Linux ve Rocky Linux Docker imajlarını CentOS imajlarına göre tavsiye edilebilir.
@@ -688,13 +697,14 @@ Programlama dili imajları birçok imaj tarafından temel imaj olarak kullanıl�
 
 Şekil~\ref{fig:proglang-by-periods} ve tablo~\ref{tab:proglang-by-periods}'da programlama dillerinin farklı dönemlerdeki güvenlik açıkları listelenmiştir. Güncellenmiş imajların eski imajlara göre çok daha az güvenlik açığı içerdiği gözlemlenebilir.
 
-\begin{figure}
+\begin{figure}[!htbp]
     \centering
     \includegraphics[width=1\linewidth]{images/s2/proglang-by-periods.png}
     \caption{Programlama dili imajlarının zafiyet sayısı.}\label{fig:proglang-by-periods}
 \end{figure}
 
-\begin{table}
+\begin{table}[!htbp]
+    \caption{Dönemlere göre programlama dili imajlarındaki zafiyetler}\label{tab:proglang-by-periods}
     \centering
     \begin{tabular}{ |c|c|c|c|c| }
         \hline
@@ -716,20 +726,20 @@ Programlama dili imajları birçok imaj tarafından temel imaj olarak kullanıl�
         library/elixir  & 1357 & 1153 &  461 \\
         \hline
     \end{tabular}
-    \caption{Dönemlere göre programlama dili imajlarındaki zafiyetler}\label{tab:proglang-by-periods}
 \end{table}
 
 \subsection{Zafiyet Düzeltilme Durumlarına Göre Dağılım}\label{subsec:fix-status}
 
-Her gün yeni güvenlik açıkları keşfedilmekte ve bu güvenlik açıklarını yamamak için sürekli olarak güncellemeler yayınlanmaktadır. Şekil~\ref{fig:vuln-fix-status}'da güvenlik açığı düzeltilme durumu bulunabilir. Dönem-1'deki güvenlik açıklarının çoğunun ``fixed'' statüsüne sahip olduğuna dikkat edin, yani güncellemeler uygulanarak bu zafiyetler tamamiyle giderilebilir. Aynı şey Dönem-2 için de söylenebilir. Ayrıca, ``not-fixed'' ve ``wont-fix'' zafiyet değişikliklerinin ``fixed'' durumuna kıyasla önemli ölçüde değişmediği söylenebilir.
+Her gün yeni güvenlik açıkları keşfedilmekte ve bu güvenlik açıklarını yamamak için sürekli olarak güncellemeler yayınlanmaktadır. Şekil~\ref{fig:vuln-fix-status}'da güvenlik açığı düzeltilme durumu bulunabilir. Dönem-1'deki güvenlik açıklarının çoğunun ``fixed'' statüsüne sahip olduğuna dikkat edin, yani güncellemeler uygulanarak bu zafiyetler tamamiyle giderilebilir. Aynı şey Dönem-2 için de söylenebilir. Ayrıca, ``not-fixed'' ve ``wont-fix'' zafiyet değişikliklerinin ``fixed'' durumuna kıyasla önemli ölçüde değişmemiştir.
 
-\begin{figure}
+\begin{figure}[!htbp]
     \centering
-    \includegraphics[width=1\linewidth]{images/s2/vuln-fix-status.png}
+    \includegraphics[width=.6\linewidth]{images/s2/vuln-fix-status.png}
     \caption{Güvenlik Açığı Düzeltme Durumu}\label{fig:vuln-fix-status}
 \end{figure}
 
 \chapter{Sonuçlar ve Öneriler}\label{ch:kapanis}
+\vspace{12pt}
 
 Docker imajlarının kullanımı, bilgi teknolojileri alanında uygulama ve yazılım geliştirmeyi kolaylaştırmıştır. Aynı zamanda yeni güvenlik problemlerini de beraberinde getirmiştir. Bu tez çalışmasında Docker imajlarındaki güvenlik açıklarının zaman içerisindeki değişiminin incelenmesi ve araştırılmasının yanı sıra mevcut Docker imaj tarama araçlarının etkinliği de ele alınmaktadır.
 
@@ -739,7 +749,7 @@ Tezin ilk aşamasında Docker Hub'da resmi, doğrulanmış ve açık kaynak olar
 
 Tez sonuçları şu şekilde listelenebilir:
 
-\begin{itemize}
+\begin{maddelendir}[label=$\bullet$]
     \item Taramalar sonucunda Trivy'nin en fazla sayıda zafiyet tespit ettiği, Grype'ın ise en fazla sayıda benzersiz zafiyet tespit ediği görülmüştür.
     \item En iyi tarama aracı Docker imajlarındaki önemli sayıda güvenlik açığını tespit edemediği ve diğer araçların daha da az performans gösterdiği gözlemlenmiştir.
     \item Risk tabanlı olarak önerilen VSM ve SVSM metrikleri ile güvenlik açıklarının riskleri ön plana çıkartılmıştır.
@@ -751,11 +761,13 @@ Tez sonuçları şu şekilde listelenebilir:
     \item Desteği kesilmiş CentOS gibi işletim sistemi imajları çok sayıda zafiyet içerebilmektedir. Bu imajlar yerine Alpine ve Photon gibi imajlar tercih edilerek zafiyet sayısı azaltılabilir.
     \item Programlama dillerine ait imajların güncellenmedikleri taktirde 2 veya 3 kat daha fazla zafiyet içerebildiği görülmüştür.
     \item Taramalar sonucunda tespit edilen zafiyetlerin çoğunun güncellemelerin uygulanması ile düzeltilebileceği tespit edilmiştir.
-\end{itemize}
+\end{maddelendir}
+\vspace{+12pt}
 
 Bu tez göstermiştir ki, Docker imajlarının güvenliği büyük ölçüde güncellemeler ve uygun tarama araçlarının kullanılmasıyla artırılabilir. Docker imaj güvenliği bulut tabanlı teknolojilerin ve yazılım geliştirme süreçlerinin önemli bir parçası olmaya devam edecektir. Bu alandaki çalışmaların devam etmesi, imaj güvenliğini daha da ileriye taşıyacak ve daha güvenli yazılımların oluşturulmasına yardımcı olacaktır.
 
 \chapter{Veri Erişilebilirliği}\label{sec:data-availability}
+\vspace{12pt}
 
 Bu tez kapsamında oluşturulan veriseti, bu alanda daha farklı çalışmaları teşvik etmek için paylaşılmıştır. Verisetimiz, çalışmada kullanılan Bash ve Python betik dosyaları, Ipynb dosyaları, tarama sonuçlarının JSON hali ile birlikte GitHub depomuzda paylaşılmıştır. Bu kaynaklara aşağıdaki bağlantıdan erişilebilir:
 
