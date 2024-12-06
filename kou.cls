@@ -896,7 +896,9 @@
 
 % Kaynakçada alt satırın 1cm içeri kaydırılması.
 \setlength{\bibhang}{1cm}
-\setlength{\bibitemsep}{\baselineskip}
+% \setlength{\bibitemsep}{\baselineskip}
+% \setlength{\bibitemsep}{12pt}
+\setlength{\bibitemsep}{\baselineskip - 12pt}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Makale(article) format duzenlenmesi.

@@ -375,6 +375,7 @@ VSM yöntemi DHR yöntemi ile benzer bir yaklaşımla çalışmaktadır. Bu metr
 Bir sonraki adımda, bölüm~\ref{subsec:ProposedMetric}'deki denklemi uygulayarak güvenlik açığı puanı metriklerini hesapladık. Sonuçlar tablo~\ref{tab:proposed-metric-results} ve şekil~\ref{fig:proposed-metric-results}'de görülebilir.
 
 \begin{table}[!htbp]
+    \vspace{12pt}
     \caption{Önerilen metrik ve DHR ile hesaplanan sonuçlar.}\label{tab:proposed-metric-results}
     \centering
     \begin{tabular}{ |c|c|c|c| }
@@ -576,9 +577,10 @@ Tablo~\ref{tab:most-vuln-images-p2}'de görüldüğü gibi Dönem-2'de ``circlec
     \end{tabular}
 \end{table}
 
-Tablo~\ref{tab:most-vuln-images-p3}'da görüldüğü gibi Dönem-3 içinde ``atlassian/default-image:latest'' en zafiyetli imajdır, ardından ``circleci/python:latest'' ve üçüncü olarak ``redash/redash:latest'' gelmektedir.
+Tablo~\ref{tab:most-vuln-images-p3}'de görüldüğü gibi Dönem-3'de ``atlassian/default-image:latest'' en zafiyetli imajdır, ardından ``circleci/python:latest'' ve üçüncü ``redash/redash:latest'' gelmektedir.
 
-\begin{table}[!htbp]
+\begin{table}[ht]
+    \vspace{12pt}
     \caption{Dönem-3'deki en zafiyetli docker imajları}\label{tab:most-vuln-images-p3}
     \centering
     \begin{tabular}{ |c|c|c|>{\bfseries}c| }
@@ -607,7 +609,7 @@ Tablo~\ref{tab:most-vuln-images-p3}'da görüldüğü gibi Dönem-3 içinde ``at
 
 \begin{figure}[!htbp]
     \centering
-    \includegraphics[width=.8\linewidth]{images/s2/image-type-by-periods.png}
+    \includegraphics[width=.9\linewidth]{images/s2/image-type-by-periods.png}
     \caption{Dönemlere göre imaj türü güvenlik açıkları}\label{fig:image-type-by-periods}
 \end{figure}
 
@@ -625,7 +627,7 @@ Bu eğilim, güncel yazılım imajlarını korumanın kritik önemini vurgulamak
 
 \subsection{Tespit Edilen En Eski CVE'ler}\label{subsec:detected-oldest-cves}
 
-Tablo~\ref{tab:oldest-cves-count} bölümünde tüm imajlar içerisinde tespit edilen en eski CVE'ler ve bunların tespit sıklıkları listelenmiştir. İlginç bir şekilde, çok eski CVE'ler hala Docker imajlarında bulunabilmektedir.
+Tablo~\ref{tab:oldest-cves-count}'da taramalar sonucunda tüm imajlar içerisinde tespit edilen en eski CVE'ler ve bunların tespit edilme sıklıkları listelenmiştir. Dikkat çekici bir şekilde, çok eski CVE'ler hala Docker imajlarında bulunabilmektedir.
 
 \begin{table}[!htbp]
     \caption{Tespit edilen en eski CVE'ler ve tespit sayıları.}\label{tab:oldest-cves-count}
@@ -734,7 +736,7 @@ Her gün yeni güvenlik açıkları keşfedilmekte ve bu güvenlik açıkların�
 
 \begin{figure}[!htbp]
     \centering
-    \includegraphics[width=.6\linewidth]{images/s2/vuln-fix-status.png}
+    \includegraphics[width=1\linewidth]{images/s2/vuln-fix-status.png}
     \caption{Güvenlik Açığı Düzeltme Durumu}\label{fig:vuln-fix-status}
 \end{figure}
 
